@@ -6,7 +6,7 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 13:44:19 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/01/13 14:54:02 by pepaloma         ###   ########.fr       */
+/*   Updated: 2024/03/04 21:01:58 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@
 
 # define ERROR_ARRAY2DSIZE "to get the size of a t_array2d, \
 the array must be rectangular"
+# define ERROR_ARGNUM "Wrong number of arguments"
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
