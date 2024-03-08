@@ -6,7 +6,7 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 19:13:38 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/02/07 15:29:27 by pepaloma         ###   ########.fr       */
+/*   Updated: 2024/03/08 23:25:12 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,23 @@
 #include "libft.h"
 
 void	*ft_error_ptr(const char *err_message,
-void (*free_func)(void *), void *content, int exit_bool)
+void (*free_func)(void *), void *content)
 {
 	if (err_message)
 		write(STDERR_FILENO, err_message, ft_strlen(err_message));
-	if (free_func && content)
+	if (free_func)
 		free_func(content);
-	if (exit_bool)
-		exit(1);
-	else
-		return (NULL);
+	return (NULL);
 }
 
 int	ft_error(const char *err_message,
-void (*free_func)(void *), void *content, int exit_bool)
+void (*free_func)(void *), void *content, int status)
 {
 	if (err_message)
 		write(STDERR_FILENO, err_message, ft_strlen(err_message));
-	if (free_func && content)
+	if (free_func)
 		free_func(content);
-	if (exit_bool)
-		exit(1);
-	else
-		return (0);
+	if (status)
+		return(status);
+	exit(EXIT_FAILURE);
 }

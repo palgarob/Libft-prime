@@ -6,7 +6,7 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 13:44:19 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/03/07 10:02:57 by pepaloma         ###   ########.fr       */
+/*   Updated: 2024/03/08 23:19:40 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,6 +135,6 @@ void		ft_array2d_free_i(char **array, int i);
 int			ft_error(const char*message,
 				void (*free_func)(void *), void *content, int exit_bool);
 void		*ft_error_ptr(const char*message,
-				void (*free_func)(void *), void *content, int exit_bool);
+				void (*free_func)(void *), void *content);
 
 #endif
