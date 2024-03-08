@@ -6,7 +6,7 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 13:44:19 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/03/08 23:19:40 by pepaloma         ###   ########.fr       */
+/*   Updated: 2024/03/08 23:36:58 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void		*ft_memset(void *s, int c, size_t len);
 int			ft_memcmp(const void *s1, const void *s2, size_t n);
 
 int			ft_atoi(const char *str);
-int			ft_atoi_of(const char *str, int *n);
+int			ft_atoi_of(char *str, int *n);
 char		*ft_itoa(int n);
 void		ft_putchar_fd(char c, int fd);
 void		ft_putendl_fd(char *s, int fd);

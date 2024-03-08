@@ -6,21 +6,21 @@
 #    By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/22 17:14:39 by pepaloma          #+#    #+#              #
-#    Updated: 2023/12/22 17:14:40 by pepaloma         ###   ########.fr        #
+#    Updated: 2024/03/08 13:20:41 by pepaloma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+NAME	= libft.a
+
 SRC_DIR	= src
 OBJ_DIR	= obj
-
-NAME	= libft.a
 
 CC				= gcc
 RM				= rm -rf
 CFLAGS			= -Wall -Wextra -Werror
 VALGRIND_FLAGS	= -O0 -g
 
-FILES	= $(shell cd src && ls *.c)
+FILES	= $(notdir $(wildcard src/*.c))
 SRC		= $(addprefix $(SRC_DIR)/, $(FILES))
 OBJ		= $(addprefix $(OBJ_DIR)/, $(FILES:.c=.o))
 
