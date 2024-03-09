@@ -6,7 +6,7 @@
 #    By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/22 17:14:39 by pepaloma          #+#    #+#              #
-#    Updated: 2024/03/08 13:20:41 by pepaloma         ###   ########.fr        #
+#    Updated: 2024/03/09 11:06:12 by pepaloma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ NAME	= libft.a
 
 SRC_DIR	= src
 OBJ_DIR	= obj
+INC_DIR	= inc
 
 CC				= gcc
 RM				= rm -rf
@@ -34,7 +35,7 @@ $(NAME) : $(OBJ)
 
 $(OBJ_DIR)/%.o : $(SRC_DIR)/%.c
 	mkdir -p $(OBJ_DIR)
-	$(CC) $(CFLAGS) $(VALGRIND_FLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -I$(INC_DIR) $(VALGRIND_FLAGS) -c $< -o $@
 
 re : fclean all
 
