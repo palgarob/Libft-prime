@@ -6,7 +6,7 @@
 #    By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/22 17:14:39 by pepaloma          #+#    #+#              #
-#    Updated: 2024/03/09 11:06:12 by pepaloma         ###   ########.fr        #
+#    Updated: 2024/03/13 23:28:15 by pepaloma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ SRC		= $(addprefix $(SRC_DIR)/, $(FILES))
 OBJ		= $(addprefix $(OBJ_DIR)/, $(FILES:.c=.o))
 
 .PHONY: all re clean fclean
-#.SILENT :
+.SILENT :
 
 all : $(NAME)
 
