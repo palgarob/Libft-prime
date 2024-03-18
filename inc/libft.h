@@ -6,7 +6,7 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 13:44:19 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/03/08 23:36:58 by pepaloma         ###   ########.fr       */
+/*   Updated: 2024/03/18 17:07:22 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 # include <sys/types.h> //ssize_t
 # include <stdarg.h>
 # include <limits.h>
+# include <stdbool.h>
 
 # define HEXADECIMAL_LO "0123456789abcdef"
 # define HEXADECIMAL_UP "0123456789ABCDEF"
