@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_array2d_len.c                                   :+:      :+:    :+:   */
+/*   ft_splitcpy.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/13 15:28:55 by pepaloma          #+#    #+#             */
-/*   Updated: 2023/12/22 17:34:31 by pepaloma         ###   ########.fr       */
+/*   Created: 2024/03/19 11:14:23 by pepaloma          #+#    #+#             */
+/*   Updated: 2024/03/19 11:30:41 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_array2d_len(char **array)
+void	ft_splitcpy(char **src, char **dst)
 {
-	int	i;
-
-	i = 0;
-	while (array[i])
-		i++;
-	return (i);
+	while (*src)
+		*(dst++) = *(src++);
 }
