@@ -6,7 +6,7 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 17:44:59 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/03/18 17:04:53 by pepaloma         ###   ########.fr       */
+/*   Updated: 2024/03/19 13:28:04 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ char	**ft_split(char const *s, char c)
 	return (ss_array);
 }
 
-int	main(void)
+/* int	main(void)
 {
 	const char	*s = "";
 	char	c = ' ';
@@ -120,4 +120,4 @@ int	main(void)
 		ss++;
 	}
 	return (0);
-}
+} */
