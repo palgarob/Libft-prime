@@ -6,13 +6,14 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 16:02:43 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/03/19 16:36:27 by pepaloma         ###   ########.fr       */
+/*   Updated: 2024/03/19 17:18:08 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* En casos como una comilla pegada a palabras en posicion inesperada como:
 "Pongo una comilla aqui' pero no la cierro" la funcion se piensa que
-forma parte del final de esa palabra. No se si gestionar esto o no*/
+forma parte del final de esa palabra. No se si gestionar esto o no. Tampoco
+creo que funcione bien si hay dos comillas pegadas de diferentes scopes*/
 
 #include "libft.h"
 
@@ -41,17 +42,15 @@ int	stract_arg(char *line, char quote, char ***split_ptr)
 	position = 0;
 	if (quote)
 	{
+		position = 1;
 		while (line[position] != quote)
 			if (!line[position++])
 				return (perror(ERR_SYNTAX), -1);
-		arg = ft_substr(line, 0, position);
 	}
 	else
-	{
 		while (line[++position] != 32 && line[position])
 			;
-		arg = ft_substr(line, 0, position);
-	}
+	arg = ft_substr(line, 0, position);
 	if (!arg)
 		return (ft_error("", 0, 0, -1));
 	if (add_string(arg, split_ptr))
@@ -75,9 +74,9 @@ char	**ft_split_quotes(char *line, char separator)
 		else
 		{
 			if (*line == 39)
-				position = stract_arg(++line, 39, &split);
+				position = stract_arg(line, 39, &split);
 			else if (*line == 34)
-				position = stract_arg(++line, 34, &split);
+				position = stract_arg(line, 34, &split);
 			else
 				position = stract_arg(line, 0, &split);
 			if (position == -1)
@@ -88,9 +87,9 @@ char	**ft_split_quotes(char *line, char separator)
 	return (split);
 }
 
-/* int	main(void)
+int	main(void)
 {
-	char	*str = "Me dijo:          'Como estas? yo le dije 'que ' bien ";
+	char	*str = "Me dijo: '  como estas' ";
 	char	**split;
 
 	split = ft_split_quotes(str, ' ');
@@ -99,4 +98,4 @@ char	**ft_split_quotes(char *line, char separator)
 	while (*split)
 		ft_printf("%s\n", *(split++));
 	return (0);
-} */
+}
