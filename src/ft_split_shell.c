@@ -6,7 +6,7 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 16:02:43 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/03/20 12:21:06 by pepaloma         ###   ########.fr       */
+/*   Updated: 2024/03/20 13:04:34 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ creo que funcione bien si hay dos comillas pegadas de diferentes scopes*/
 static bool	is_metachar(char c)
 {
 	if (
-		c == '|' || c == '<' || c == '>' || c == ' ' || c == '"' || c == '\''
+		c == '|' || c == '<' || c == '>' || c == ' '
 	)
 		return (true);
 	return (false);
@@ -34,7 +34,7 @@ static int	add_string(char *new_string, char ***split_ptr)
 	len = ft_splitlen(*split_ptr);
 	cpy = (char **)malloc(sizeof(char *) * (len + 2));
 	if (!cpy)
-		return (free(new_string), perror(0), 1);
+		return (perror(0), 1);
 	ft_splitcpy(*split_ptr, cpy);
 	free(*split_ptr);
 	cpy[len] = new_string;
@@ -43,32 +43,48 @@ static int	add_string(char *new_string, char ***split_ptr)
 	return (0);
 }
 
-int	stract_arg(char *line, char ***split_ptr)
+int	stract_operator(char *line, char ***split_ptr)
 {
 	int		position;
 	char	*arg;
 
 	position = 1;
-	if (*line == '"' || *line == '\'')
-	{
-		while (line[position] != *line)
-			if (!line[position++])
-				return (perror(ERR_SYNTAX), -1);
-		position++;
-	}
-	else if (*line == '<' || *line == '>')
+	if (*line == '<' || *line == '>')
 	{
 		if (line[position] == *line)
 			position += 1;
 	}
-	else if (*line != '|')
-		while (!is_metachar(line[position]) && line[position])
-			position++;
 	arg = ft_substr(line, 0, position);
 	if (!arg)
-		return (perror(0), -1);
+		return (perror(0), 0);
 	if (add_string(arg, split_ptr))
-		return (free(arg), -1);
+		return (free(arg), 0);
+	return (position);
+}
+
+int	stract_argument(char *line, char ***split_ptr)
+{
+	int		position;
+	char	*arg;
+	int		quote;
+
+	position = 0;
+	while (!is_metachar(line[position]) && line[position])
+	{
+		if (line[position] == '"' || line[position] == '\'')
+		{
+			quote = line[position++];
+			while (line[position] != quote)
+				if (!line[position++])
+					return (perror(ERR_SYNTAX), 0);
+		}
+		position++;
+	}
+	arg = ft_substr(line, 0, position);
+	if (!arg)
+		return (perror(0), 0);
+	if (add_string(arg, split_ptr))
+		return (free(arg), 0);
 	return (position);
 }
 
@@ -85,8 +101,11 @@ char	**ft_split_shell(char *line, char separator)
 			line++;
 		else
 		{
-			position = stract_arg(line, &split);
-			if (position == -1)
+			if (is_metachar(*line))
+				position = stract_operator(line, &split);
+			else
+				position = stract_argument(line, &split);
+			if (!position)
 				return (ft_splitfree(split), NULL);
 			line += position;
 		}
@@ -94,9 +113,9 @@ char	**ft_split_shell(char *line, char separator)
 	return (split);
 }
 
-/* int	main(void)
+int	main(void)
 {
-	char	*str = "   Hola<j   ";
+	char	*str = "H|o'la   ' <<><j ";
 	char	**split;
 
 	split = ft_split_shell(str, ' ');
@@ -105,4 +124,4 @@ char	**ft_split_shell(char *line, char separator)
 	while (*split)
 		ft_printf("%s\n", *(split++));
 	return (0);
-} */
+}
