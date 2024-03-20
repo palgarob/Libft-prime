@@ -6,7 +6,7 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 13:44:19 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/03/20 13:12:52 by pepaloma         ###   ########.fr       */
+/*   Updated: 2024/03/20 18:44:55 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@
 # define ERROR_ARRAY2DSIZE "to get the size of a t_array2d, \
 the array must be rectangular\n"
 # define ERROR_ARGNUM "Wrong number of arguments\n"
-# define ERR_SYNTAX "Syntax error"
+# define ERR_PARSE "Parse& error"
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
@@ -134,9 +134,8 @@ int			ft_splitlen(char **array);
 void		ft_array2d_free(void *param);
 void		ft_array2d_free_i(char **array, int i);
 void		ft_splitcpy(char **src, char **dst);
-char		**ft_split_shell(char *line, char separator);
 void		ft_splitfree(char **split);
-char	**ft_splitlast(char **split);
+char		**ft_splitlast(char **split);
 
 int			ft_error(const char*message,
 				void (*free_func)(void *), void *content, int exit_bool);
