@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split_quotes.c                                  :+:      :+:    :+:   */
+/*   ft_split_shell.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 16:02:43 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/03/19 17:18:08 by pepaloma         ###   ########.fr       */
+/*   Updated: 2024/03/20 12:21:06 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,15 @@ forma parte del final de esa palabra. No se si gestionar esto o no. Tampoco
 creo que funcione bien si hay dos comillas pegadas de diferentes scopes*/
 
 #include "libft.h"
+
+static bool	is_metachar(char c)
+{
+	if (
+		c == '|' || c == '<' || c == '>' || c == ' ' || c == '"' || c == '\''
+	)
+		return (true);
+	return (false);
+}
 
 static int	add_string(char *new_string, char ***split_ptr)
 {
@@ -34,33 +43,36 @@ static int	add_string(char *new_string, char ***split_ptr)
 	return (0);
 }
 
-int	stract_arg(char *line, char quote, char ***split_ptr)
+int	stract_arg(char *line, char ***split_ptr)
 {
 	int		position;
 	char	*arg;
 
-	position = 0;
-	if (quote)
+	position = 1;
+	if (*line == '"' || *line == '\'')
 	{
-		position = 1;
-		while (line[position] != quote)
+		while (line[position] != *line)
 			if (!line[position++])
 				return (perror(ERR_SYNTAX), -1);
+		position++;
 	}
-	else
-		while (line[++position] != 32 && line[position])
-			;
+	else if (*line == '<' || *line == '>')
+	{
+		if (line[position] == *line)
+			position += 1;
+	}
+	else if (*line != '|')
+		while (!is_metachar(line[position]) && line[position])
+			position++;
 	arg = ft_substr(line, 0, position);
 	if (!arg)
-		return (ft_error("", 0, 0, -1));
+		return (perror(0), -1);
 	if (add_string(arg, split_ptr))
 		return (free(arg), -1);
-	if (quote)
-		position += 1;
 	return (position);
 }
 
-char	**ft_split_quotes(char *line, char separator)
+char	**ft_split_shell(char *line, char separator)
 {
 	char	**split;
 	int		position;
@@ -73,12 +85,7 @@ char	**ft_split_quotes(char *line, char separator)
 			line++;
 		else
 		{
-			if (*line == 39)
-				position = stract_arg(line, 39, &split);
-			else if (*line == 34)
-				position = stract_arg(line, 34, &split);
-			else
-				position = stract_arg(line, 0, &split);
+			position = stract_arg(line, &split);
 			if (position == -1)
 				return (ft_splitfree(split), NULL);
 			line += position;
@@ -87,15 +94,15 @@ char	**ft_split_quotes(char *line, char separator)
 	return (split);
 }
 
-int	main(void)
+/* int	main(void)
 {
-	char	*str = "Me dijo: '  como estas' ";
+	char	*str = "   Hola<j   ";
 	char	**split;
 
-	split = ft_split_quotes(str, ' ');
+	split = ft_split_shell(str, ' ');
 	if (!split)
 		exit(0);
 	while (*split)
 		ft_printf("%s\n", *(split++));
 	return (0);
-}
+} */

@@ -6,7 +6,7 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 13:44:19 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/03/19 16:30:13 by pepaloma         ###   ########.fr       */
+/*   Updated: 2024/03/20 10:13:54 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,8 +134,8 @@ int			ft_splitlen(char **array);
 void		ft_array2d_free(void *param);
 void		ft_array2d_free_i(char **array, int i);
 void		ft_splitcpy(char **src, char **dst);
-char		**ft_split_quotes(char *line, char separator);
-void	ft_splitfree(char **split);
+char		**ft_split_shell(char *line, char separator);
+void		ft_splitfree(char **split);
 
 int			ft_error(const char*message,
 				void (*free_func)(void *), void *content, int exit_bool);
