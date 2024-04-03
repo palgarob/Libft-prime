@@ -6,7 +6,7 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 17:44:59 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/03/19 13:28:04 by pepaloma         ###   ########.fr       */
+/*   Updated: 2024/04/03 21:35:47 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	store_s(char **ss_array, char *s, char c, size_t len)
 	i = 0;
 	*ss_array = (char *)malloc(sizeof(char) * (len + 1));
 	if (!*ss_array)
-		return (ft_error("", 0, 0, 0));
+		return (perror(NULL), 0);
 	while (*s != c && *s)
 	{
 		ss_array[0][i++] = *(s++);
@@ -92,7 +92,7 @@ char	**ft_split(char const *s, char c)
 	n = count_ss((char *)s, c);
 	ss_array = (char **)malloc(sizeof(char *) * (n + 1));
 	if (!ss_array)
-		return (ft_error_ptr("", 0, 0));
+		return (perror(NULL), NULL);
 	ss_array[n] = NULL;
 	if (!store_ss(ss_array, (char *)s, c))
 	{

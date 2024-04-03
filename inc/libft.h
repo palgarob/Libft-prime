@@ -6,7 +6,7 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 13:44:19 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/03/21 03:00:59 by pepaloma         ###   ########.fr       */
+/*   Updated: 2024/04/03 21:36:15 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include <errno.h>
-# include <stddef.h> //NULL, size_t
-# include <sys/types.h> //ssize_t
+# include <stddef.h>
+# include <sys/types.h>
 # include <stdarg.h>
 # include <limits.h>
 # include <stdbool.h>
@@ -29,10 +29,6 @@
 # define HEXADECIMAL_LO "0123456789abcdef"
 # define HEXADECIMAL_UP "0123456789ABCDEF"
 # define DECIMAL "0123456789"
-
-# define ERROR_ARRAY2DSIZE "to get the size of a t_array2d, \
-the array must be rectangular\n"
-# define ERROR_ARGNUM "Wrong number of arguments\n"
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
@@ -43,24 +39,6 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }	t_list;
-
-typedef struct s_point
-{
-	int	x;
-	int	y;
-}	t_point;
-
-typedef struct s_array2d
-{
-	char	**array;
-	t_point	size;
-}	t_array2d;
-
-typedef struct s_intarray
-{
-	int		*array;
-	size_t	size;
-}	t_intarray;
 
 int			ft_isalnum(int c);
 int			ft_isalpha(int c);
@@ -79,14 +57,12 @@ int			ft_memcmp(const void *s1, const void *s2, size_t n);
 int			ft_atoi(const char *str);
 int			ft_atoi_of(char *str, int *n);
 char		*ft_itoa(int n);
-void		ft_putchar_fd(char c, int fd);
-void		ft_putendl_fd(char *s, int fd);
 void		ft_putnbr_fd(int n, int fd);
-void		ft_putstr_fd(char *s, int fd);
 char		*ft_strchr(const char *s, int c);
 char		*ft_strdup(const char *s1);
 void		ft_striteri(char *s, void (*f)(unsigned int, char*));
 char		*ft_strjoin(char const *s1, char const *s2);
+char		*ft_strjoin_gnl(char *s1, char *s2);
 size_t		ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t		ft_strlen(const char *s);
@@ -94,12 +70,10 @@ char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
 char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char		*ft_strrchr(const char *s, int c);
-char		**ft_split(char const *s, char c);
 char		*ft_strtrim(char *s1, char const *set);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
 int			ft_strins(char **str_ptr, int snip_l, int snip_r, char *str_insert);
-int			ft_tolower(int c);
-int			ft_toupper(int c);
+char		*ft_gnl(int fd);
 
 t_list		*ft_lstnew(void *content);
 void		ft_lstadd_front(t_list **lst, t_list *new);
@@ -113,9 +87,6 @@ t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 t_list		*ft_lst2ndlast(t_list *lst);
 t_list		*ft_lstcpy(t_list *lst, void (*del)(void *));
 
-char		*ft_gnl(int fd);
-char		*ft_strjoin_gnl(char *s1, char *s2);
-
 int			ft_printf(char const *format, ...);
 int			ft_print_hex(unsigned int n, int lcase);
 int			ft_print_char(int c);
@@ -124,23 +95,12 @@ int			ft_print_ptr(void *ptr);
 int			ft_print_dec(int n);
 int			ft_print_uns(unsigned int n);
 
-char		**ft_array2d_create(int fd, char c);
-int			ft_array2d_valid_path(t_array2d array2d,
-				t_point begin, const char *floodplain);
-int			ft_array2d_search(t_array2d array2d, char c, t_point *position);
-int			get_size(char **array, t_point *size);
-t_array2d	*ft_array2d_cpy(t_array2d array2d);
-int			ft_splitlen(char **array);
-void		ft_array2d_free(void *param);
-void		ft_array2d_free_i(char **array, int i);
+char		**ft_split(char const *s, char c);
+size_t		ft_splitlen(char **array);
 void		ft_splitcpy(char **src, char **dst);
 void		ft_splitfree(char **split);
 char		**ft_splitlast(char **split);
 int			ft_splitadd(char *new_string, char ***split_ptr);
-
-int			ft_error(const char*message,
-				void (*free_func)(void *), void *content, int exit_bool);
-void		*ft_error_ptr(const char*message,
-				void (*free_func)(void *), void *content);
+char		**ft_splitdup(char **src);
 
 #endif

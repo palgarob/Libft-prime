@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pepaloma <pepaloma@student.42urduli>       +#+  +:+       +#+        */
+/*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 13:03:27 by pepaloma          #+#    #+#             */
-/*   Updated: 2023/02/13 13:03:30 by pepaloma         ###   ########.fr       */
+/*   Updated: 2024/04/03 21:25:13 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ char	*ft_itoa(int n)
 	len = nbrlen(n);
 	s = (char *)malloc(sizeof(char) * len + 1);
 	if (!s)
-		return (NULL);
+		return (perror(NULL), NULL);
 	s[len] = 0;
 	write_nb(s, n, len);
 	return (s);

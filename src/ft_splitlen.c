@@ -6,15 +6,15 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 15:28:55 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/03/19 11:11:34 by pepaloma         ###   ########.fr       */
+/*   Updated: 2024/04/03 20:30:00 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_splitlen(char **split)
+size_t	ft_splitlen(char **split)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (split[i])
