@@ -6,7 +6,7 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 16:27:13 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/03/19 16:29:28 by pepaloma         ###   ########.fr       */
+/*   Updated: 2024/04/21 22:21:12 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_splitfree(char **split)
 {
 	char	**aux;
-	
+
 	aux = split;
 	while (*split)
 		free(*(split++));
