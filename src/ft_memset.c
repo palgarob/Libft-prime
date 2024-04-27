@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pepaloma <pepaloma@student.42urduli>       +#+  +:+       +#+        */
+/*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 18:47:25 by pepaloma          #+#    #+#             */
-/*   Updated: 2023/01/23 18:47:31 by pepaloma         ###   ########.fr       */
+/*   Updated: 2024/04/27 23:34:20 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,19 +25,3 @@ void	*ft_memset(void *b, int c, size_t len)
 	}
 	return (b);
 }
-/*
-int	main(void)
-{
-	char	s[] = "Buenos dias";
-	char	c = '~';
-	size_t	len = 3;
-
-	//Desde el comienzo de s los primeros len caracteres
-	//serán sustituidos por el caracter c.
-	printf("*******************************");
-	printf("\nCon len = 3 tiene que aparecer \"~~~nos dias\"\n");
-	printf("Aparece: %s\n", (char *)ft_memset((void *)s, c, len));
-	printf("*******************************");
-	return (0);
-}
-*/

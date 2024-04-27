@@ -6,7 +6,7 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 13:03:27 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/04/03 21:25:13 by pepaloma         ###   ########.fr       */
+/*   Updated: 2024/04/27 23:36:30 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,9 +67,3 @@ char	*ft_itoa(int n)
 	write_nb(s, n, len);
 	return (s);
 }
-
-/*int	main(void)
-{
-	printf("%s", ft_itoa(0));
-	return (0);
-}*/

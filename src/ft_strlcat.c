@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pepaloma <pepaloma@student.42urduli>       +#+  +:+       +#+        */
+/*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 16:24:08 by pepaloma          #+#    #+#             */
-/*   Updated: 2023/01/25 16:24:12 by pepaloma         ###   ########.fr       */
+/*   Updated: 2024/04/27 23:38:43 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,18 +33,3 @@ size_t	ft_strlcat(char *dst, const char *src,
 	ft_strlcpy(dst, src, j);
 	return (i);
 }
-/*
-int	main(void)
-{
-	char	src[20] = "abcder";
-	char	dst[20] = "xyzwi";
-	char	src1[20] = "abcder";
-	char	dst1[20] = "xyzwi";
-	size_t	n = 7;
-
-
-	printf("%zu\n%s\n\n", strlcat(dst, src, n), dst);
-	printf("%zu\n%s\n", ft_strlcat(dst1, src1, n), dst1);
-	return (0);
-}
-*/

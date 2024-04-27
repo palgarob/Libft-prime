@@ -6,7 +6,7 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 16:29:19 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/02/09 18:16:19 by pepaloma         ###   ########.fr       */
+/*   Updated: 2024/04/27 23:35:40 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static int	count_spaces(char *s)
 
 static int	check_overflow(long aux, int *n)
 {
-	if (aux > INT_MAX || aux < INT_MIN)
+	if (aux > 0x7fffffff || aux < 0x80000000)
 		return (1);
 	else
 	{
@@ -65,15 +65,3 @@ int	ft_atoi_of(char *str, int *n)
 		return (1);
 	return (check_overflow(aux, n));
 }
-
-/* int	main(void)
-{
-	char	*str = "-21472648";
-	int		n;
-
-	if (ft_atoi_of(str, &n))
-		printf("INVALID\n");
-	else
-		printf("%d\n", n);
-	
-} */

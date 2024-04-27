@@ -6,7 +6,7 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 13:44:19 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/04/03 21:36:15 by pepaloma         ###   ########.fr       */
+/*   Updated: 2024/04/27 23:59:42 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,10 @@
 # define LIBFT_H
 
 # include <stdio.h>
-# include <string.h>
 # include <stdlib.h>
-# include <ctype.h>
 # include <unistd.h>
 # include <fcntl.h>
 # include <errno.h>
-# include <stddef.h>
-# include <sys/types.h>
 # include <stdarg.h>
 # include <limits.h>
 # include <stdbool.h>

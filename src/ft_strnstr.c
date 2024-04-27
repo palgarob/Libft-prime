@@ -6,7 +6,7 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 17:22:50 by pepaloma          #+#    #+#             */
-/*   Updated: 2023/12/09 14:10:45 by pepaloma         ###   ########.fr       */
+/*   Updated: 2024/04/27 23:39:31 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,3 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (NULL);
 }
-
-/* int	main(void)
-{
-	printf("%s", ft_strnstr("haystack", "ta", 6));
-	return (0);
-} */

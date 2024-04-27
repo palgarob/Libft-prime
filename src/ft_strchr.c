@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pepaloma <pepaloma@student.42urduli>       +#+  +:+       +#+        */
+/*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 18:02:41 by pepaloma          #+#    #+#             */
-/*   Updated: 2023/01/25 18:02:49 by pepaloma         ###   ########.fr       */
+/*   Updated: 2024/04/27 23:38:09 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,3 @@ char	*ft_strchr(const char *s, int c)
 	}
 	return (NULL);
 }
-/*
-int	main(void)
-{
-	char	*s = "teste";
-	int	c = 'e';
-	char	*t;
-
-	t = ft_strchr(s, c);
-	printf("%p\n", &s[1]);
-	printf("%p", t);
-	return (0);
-}
-*/

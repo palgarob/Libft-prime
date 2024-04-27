@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pepaloma <pepaloma@student.42urduli>       +#+  +:+       +#+        */
+/*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 12:20:45 by pepaloma          #+#    #+#             */
-/*   Updated: 2023/02/06 12:20:48 by pepaloma         ###   ########.fr       */
+/*   Updated: 2024/04/27 23:38:37 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,13 +52,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ft_strlcat(s, (char *)s2, joint_len);
 	return (s);
 }
-/*
-int	main(void)
-{
-	char	s1[4] = "abc";
-	char	s2[20] = "xyz";
-
-	printf("%s", ft_strjoin(s1, s2));
-	return (0);
-}
-*/
