@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pepaloma <pepaloma@student.42urduli>       +#+  +:+       +#+        */
+/*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 15:04:44 by pepaloma          #+#    #+#             */
-/*   Updated: 2023/01/30 15:04:51 by pepaloma         ###   ########.fr       */
+/*   Updated: 2024/04/27 23:39:25 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,3 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return (0);
 }
-/*
-int	main(void)
-{
-	printf("%d\n", strncmp("abcdefgh", "", 0));
-	printf("%d\n", ft_strncmp("abcdefgh", "", 0));
-	return (0);
-}
-*/

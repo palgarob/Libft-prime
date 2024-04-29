@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pepaloma <pepaloma@student.42urduli>       +#+  +:+       +#+        */
+/*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 12:26:28 by pepaloma          #+#    #+#             */
-/*   Updated: 2023/02/06 12:26:33 by pepaloma         ###   ########.fr       */
+/*   Updated: 2024/04/27 23:39:54 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,3 @@ char	*ft_strtrim(char *s1, char const *set)
 		s1 = end;
 	return (ft_substr(s1, 0, end - s1));
 }
-
-/*int	main(void)
-{
-	char	*s = "osklosk";
-	char	*set = "osk";
-
-	printf("%s", ft_strtrim(s, set));
-}
-*/

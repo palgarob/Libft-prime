@@ -6,7 +6,7 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 18:57:34 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/03/09 11:17:50 by pepaloma         ###   ########.fr       */
+/*   Updated: 2024/04/27 23:35:49 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,14 +48,3 @@ int	ft_atoi(const char *str)
 		return (get_number((char *)str + 1));
 	return (get_number((char *)str));
 }
-
-/* int	main(void)
-{
-	const char	*str = "0";
-	int			n;
-
-	printf("%d\n", atoi(str));
-	printf("%d\n", ft_atoi(str));
-	printf("%d\n", n);
-	return (0);
-} */

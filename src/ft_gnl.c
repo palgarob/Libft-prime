@@ -6,7 +6,7 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 14:12:09 by pepaloma          #+#    #+#             */
-/*   Updated: 2023/12/09 14:12:33 by pepaloma         ###   ########.fr       */
+/*   Updated: 2024/04/27 23:36:16 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,21 +90,3 @@ char	*ft_gnl(int fd)
 	prepare_block(&block);
 	return (line);
 }
-
-/* int	main(void)
-{
-	int		fd;
-	char	*line;
-
-	fd = open("example.txt", O_RDWR);
-	line = ft_gnl(fd);
-	printf("%s*", line);
-	free(line);
-	while (line)
-	{
-		line = ft_gnl(fd);
-		printf("%s*", line);
-		free(line);
-	}
-	return (0);
-} */

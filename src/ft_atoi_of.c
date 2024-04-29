@@ -6,7 +6,7 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 16:29:19 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/04/29 10:06:07 by pepaloma         ###   ########.fr       */
+/*   Updated: 2024/04/29 10:10:10 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,15 +65,3 @@ int	ft_atoi_of(char *str, int *n)
 		return (1);
 	return (check_overflow(aux, n));
 }
-
-/* int	main(void)
-{
-	char	*str = "-21472648";
-	int		n;
-
-	if (ft_atoi_of(str, &n))
-		printf("INVALID\n");
-	else
-		printf("%d\n", n);
-	
-} */

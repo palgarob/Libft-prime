@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dectohex.c                                      :+:      :+:    :+:   */
+/*   ft_print_hex.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pepaloma <pepaloma@student.42urduli>       +#+  +:+       +#+        */
+/*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 16:04:50 by pepaloma          #+#    #+#             */
-/*   Updated: 2023/10/24 17:56:03 by pepaloma         ###   ########.fr       */
+/*   Updated: 2024/04/27 23:37:37 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,3 @@ int	ft_print_hex(unsigned int n, int lcase)
 	}
 	return (i + 1);
 }
-
-/* int	main(void)
-{
-	int	n = 256;
-
-	printf("\n%d\n", ft_print_hex(n));
-	return (0);
-} */

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_dec.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pepaloma <pepaloma@student.42urduli>       +#+  +:+       +#+        */
+/*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 16:50:29 by pepaloma          #+#    #+#             */
-/*   Updated: 2023/10/25 16:50:31 by pepaloma         ###   ########.fr       */
+/*   Updated: 2024/04/28 00:18:07 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

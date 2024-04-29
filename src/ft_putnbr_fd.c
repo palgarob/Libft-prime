@@ -6,7 +6,7 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 21:34:55 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/04/03 21:39:48 by pepaloma         ###   ########.fr       */
+/*   Updated: 2024/04/27 23:37:49 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,21 +31,3 @@ void	ft_putnbr_fd(int n, int fd)
 	c = n % 10 + '0';
 	write(fd, &c, 1);
 }
-/*
-int	main(void)
-{
-	int	fd;
-	int	n = 9;
-
-	fd = open("a1.txt", O_RDWR);
-	if (fd == -1)
-	{
-		printf("OH FUCK\n");
-		printf("%d", errno);
-		return (-1);
-	}
-	ft_putnbr_fd(n, fd);
-	close(fd);
-	return (0);
-}
-*/
