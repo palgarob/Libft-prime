@@ -6,7 +6,7 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 13:44:19 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/04/27 23:59:42 by pepaloma         ###   ########.fr       */
+/*   Updated: 2024/11/03 20:19:55 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,5 +98,12 @@ void		ft_splitfree(char **split);
 char		**ft_splitlast(char **split);
 int			ft_splitadd(char *new_string, char ***split_ptr);
 char		**ft_splitdup(char **src);
+
+// Colors
+int	get_r(int rgba);
+int	get_g(int rgba);
+int	get_b(int rgba);
+int	get_a(int rgba);
+int	get_color(int r, int g, int b, int a);
 
 #endif
