@@ -6,7 +6,7 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 20:20:21 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/11/03 20:20:24 by pepaloma         ###   ########.fr       */
+/*   Updated: 2024/11/04 13:52:47 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int get_a(int rgba)
 	return (rgba & 0xFF);
 }
 
-int get_rgba(int r, int g, int b, int a)
+int get_color(int r, int g, int b, int a)
 {
 	return (r << 24 | g << 16 | b << 8 | a);
 }
