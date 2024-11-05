@@ -6,7 +6,7 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 13:44:19 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/11/04 13:52:40 by pepaloma         ###   ########.fr       */
+/*   Updated: 2024/11/05 09:14:36 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # include <stdarg.h>
 # include <limits.h>
 # include <stdbool.h>
+# include <math.h>
 
 # define HEXADECIMAL_LO "0123456789abcdef"
 # define HEXADECIMAL_UP "0123456789ABCDEF"
@@ -104,6 +105,6 @@ int	get_r(int rgba);
 int	get_g(int rgba);
 int	get_b(int rgba);
 int	get_a(int rgba);
-int	get_color(int r, int g, int b, int a);
+int	get_color(double r, double g, double b);
 
 #endif
