@@ -6,7 +6,7 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 13:44:19 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/11/28 12:02:52 by pepaloma         ###   ########.fr       */
+/*   Updated: 2024/11/28 15:49:00 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,11 @@
 # define HEXADECIMAL_LO "0123456789abcdef"
 # define HEXADECIMAL_UP "0123456789ABCDEF"
 # define DECIMAL "0123456789"
+# define RAD2DEG (M_PI / 360.0 * 2)
+# define DEG2RAD (360 / M_PI / 2)
+# ifndef M_PI
+#  define M_PI 3.14159265358979323846
+# endif
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
@@ -93,13 +98,15 @@ int			ft_print_ptr(void *ptr);
 int			ft_print_dec(int n);
 int			ft_print_uns(unsigned int n);
 
-char		**ft_split(char const *s, char c);
-size_t		ft_splitlen(char **array);
-void		ft_splitcpy(char **src, char **dst);
-void		ft_splitfree(char **split);
-char		**ft_splitlast(char **split);
-int			ft_splitadd(char *new_string, char ***split_ptr);
-char		**ft_splitdup(char **src);
+int	ft_dprintf(int fd, char const *s, ...);
+
+char		**split(char const *s, char c);
+size_t		splitlen(char **array);
+void		splitcpy(char **src, char **dst);
+void		splitfree(char **split);
+char		**splitlast(char **split);
+int			splitadd(char *new_string, char ***split_ptr);
+char		**splitdup(char **src);
 
 // Colors
 int	get_r(int rgba);

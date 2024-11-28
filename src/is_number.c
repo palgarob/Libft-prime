@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_splitlast.c                                     :+:      :+:    :+:   */
+/*   is_number.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/20 13:07:16 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/03/20 13:12:08 by pepaloma         ###   ########.fr       */
+/*   Created: 2024/11/28 15:53:59 by pepaloma          #+#    #+#             */
+/*   Updated: 2024/11/28 17:09:14 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_splitlast(char **split)
+bool	is_number(char *str)
 {
-	if (!*split)
-		return (NULL);
-	while (*(split + 1))
-		split++;
-	return (split);
+	str += count_spaces(str);
+	return (
+		*str ==
+	);
 }

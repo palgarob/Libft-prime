@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_splitmv.c                                       :+:      :+:    :+:   */
+/*   splitlast.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/19 11:14:23 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/04/03 20:26:10 by pepaloma         ###   ########.fr       */
+/*   Created: 2024/03/20 13:07:16 by pepaloma          #+#    #+#             */
+/*   Updated: 2024/03/20 13:12:08 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_splitcpy(char **src, char **dst)
+char	**splitlast(char **split)
 {
-	while (*src)
-		*(dst++) = *(src++);
+	if (!*split)
+		return (NULL);
+	while (*(split + 1))
+		split++;
+	return (split);
 }

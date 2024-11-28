@@ -6,7 +6,7 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 10:59:48 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/11/28 12:06:11 by pepaloma         ###   ########.fr       */
+/*   Updated: 2024/11/28 16:54:41 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ long long	convert2ll(char *str)
 int	a2uc(char *str, unsigned char *n)
 {
 	long long	aux;
-	
+
 	str += count_spaces(str);
 	if (*str == '-')
 		aux = convert2ll(str + 1) * -1;

@@ -6,7 +6,7 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 12:00:10 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/11/28 12:00:31 by pepaloma         ###   ########.fr       */
+/*   Updated: 2024/11/28 15:51:00 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ static int	check_overflow(long aux, int *n)
 		return (1);
 	else
 	{
-		*n = aux;
+		if (n)
+			*n = aux;
 		return (0);
 	}
 }

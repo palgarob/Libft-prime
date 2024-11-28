@@ -1,23 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_splitfree.c                                     :+:      :+:    :+:   */
+/*   splitdup.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/19 16:27:13 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/04/21 22:21:12 by pepaloma         ###   ########.fr       */
+/*   Created: 2024/04/03 20:22:30 by pepaloma          #+#    #+#             */
+/*   Updated: 2024/11/28 15:49:00 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_splitfree(char **split)
+char	**splitdup(char **src)
 {
+	char	**dup;
+	size_t	len;
 	char	**aux;
 
-	aux = split;
-	while (*split)
-		free(*(split++));
-	free(aux);
+	len = splitlen(src);
+	dup = (char **)malloc(sizeof(char *) * (len + 1));
+	if (!dup)
+		return (perror(NULL), NULL);
+	aux = dup;
+	while (*src)
+	{
+		*dup = ft_strdup(*src);
+		if (!*dup)
+			return (NULL);
+		src++;
+		dup++;
+	}
+	*dup = NULL;
+	return (aux);
 }
