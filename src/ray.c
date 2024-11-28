@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_number.c                                        :+:      :+:    :+:   */
+/*   ray.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/28 15:53:59 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/11/28 17:45:40 by pepaloma         ###   ########.fr       */
+/*   Created: 2024/11/28 18:23:02 by pepaloma          #+#    #+#             */
+/*   Updated: 2024/11/28 18:23:25 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-bool	is_number(char *str)
+t_ray	ray(t_vec origin, t_vec orientation)
 {
-	str += count_spaces(str);
-	return (
-		ft_isdigit(*str) ||
-		((*str == '+' || *str == '-') && ft_isdigit(*(str + 1)))
-	);
+	t_ray	ray;
+
+	ray.orientation = orientation;
+	ray.origin = origin;
+	return (ray);
+}
+
+t_vec	getpoint_ray(t_ray ray, double t)
+{
+	return (vec_add(ray.origin, vec_scale_m(ray.orientation, t)));
 }

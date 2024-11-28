@@ -6,7 +6,7 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 13:44:19 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/11/28 15:49:00 by pepaloma         ###   ########.fr       */
+/*   Updated: 2024/11/28 18:23:56 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,17 +36,34 @@
 #  define BUFFER_SIZE 42
 # endif
 
+// Linked lists
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }	t_list;
 
+// 3 dimensional vector
+typedef struct s_vec
+{
+	double	x;
+	double	y;
+	double	z;
+}	t_vec;
+
+typedef struct s_ray
+{
+	t_vec	origin;
+	t_vec	orientation;
+}	t_ray;
+
 int			ft_isalnum(int c);
 int			ft_isalpha(int c);
 int			ft_isascii(int c);
 int			ft_isdigit(int c);
 int			ft_isprint(int c);
+bool		is_number(char *str);
+bool		is_double(const char *str);
 
 void		*ft_calloc(size_t count, size_t size);
 void		ft_bzero(void *s, size_t n);
@@ -100,7 +117,7 @@ int			ft_print_uns(unsigned int n);
 
 int	ft_dprintf(int fd, char const *s, ...);
 
-char		**split(char const *s, char c);
+char		**splitstr(char const *s, char c);
 size_t		splitlen(char **array);
 void		splitcpy(char **src, char **dst);
 void		splitfree(char **split);
@@ -114,5 +131,19 @@ int	get_g(int rgba);
 int	get_b(int rgba);
 int	get_a(int rgba);
 int	get_color(double r, double g, double b);
+
+t_vec	vec(double x, double y, double z);
+t_vec	vec_scale_m(t_vec v, double scalar);
+t_vec	vec_scale_d(t_vec v, double scalar);
+t_vec	vec_add(t_vec a, t_vec b);
+t_vec	vec_sub(t_vec a, t_vec b);
+t_vec	vec_cross(t_vec a, t_vec b);
+double	vec_dot(t_vec a, t_vec b);
+double	vec_len(t_vec v);
+double	vec_lensquared(t_vec v);
+t_vec	vec_normalize(t_vec v);
+
+t_ray	ray(t_vec origin, t_vec orientation);
+t_vec	getpoint_ray(t_ray ray, double t);
 
 #endif

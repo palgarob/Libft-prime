@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   split.c                                            :+:      :+:    :+:   */
+/*   splitstr.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 17:44:59 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/11/28 15:46:27 by pepaloma         ###   ########.fr       */
+/*   Updated: 2024/11/28 18:05:09 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ static size_t	count_ss(char *s, char c)
 	return (n);
 }
 
-char	**split(char const *s, char c)
+char	**splitstr(char const *s, char c)
 {
 	int		n;
 	char	**ss_array;
