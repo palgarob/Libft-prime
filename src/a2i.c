@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi_of.c                                       :+:      :+:    :+:   */
+/*   a2i.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/09 16:29:19 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/04/29 10:10:10 by pepaloma         ###   ########.fr       */
+/*   Created: 2024/11/28 12:00:10 by pepaloma          #+#    #+#             */
+/*   Updated: 2024/11/28 12:00:31 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count_spaces(char *s)
+static size_t	count_spaces(char *s)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (*s == ' ' || *s == '\t' || *s == '\v'
@@ -50,7 +50,7 @@ long	convert_to_long(char *str)
 	return (l);
 }
 
-int	ft_atoi_of(char *str, int *n)
+int	a2i(char *str, int *n)
 {
 	long	aux;
 

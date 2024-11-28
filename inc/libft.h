@@ -6,7 +6,7 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 13:44:19 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/11/05 09:14:36 by pepaloma         ###   ########.fr       */
+/*   Updated: 2024/11/28 12:02:52 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,8 @@ void		*ft_memset(void *s, int c, size_t len);
 int			ft_memcmp(const void *s1, const void *s2, size_t n);
 
 int			ft_atoi(const char *str);
-int			ft_atoi_of(char *str, int *n);
+int			a2i(char *str, int *n);
+int			a2uc(char *str, unsigned char *n);
 char		*ft_itoa(int n);
 void		ft_putnbr_fd(int n, int fd);
 char		*ft_strchr(const char *s, int c);
