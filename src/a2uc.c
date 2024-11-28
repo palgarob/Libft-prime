@@ -6,7 +6,7 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 10:59:48 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/11/28 12:02:28 by pepaloma         ###   ########.fr       */
+/*   Updated: 2024/11/28 12:06:11 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static size_t	count_spaces(char *s)
 	return (i);
 }
 
-static int	check_overflow(long long aux, int *n)
+static int	check_overflow(long long aux, unsigned char *n)
 {
 	if (aux > 255 || aux < 0)
 		return (1);
@@ -50,7 +50,7 @@ long long	convert2ll(char *str)
 	return (l);
 }
 
-unsigned char	a2uc(char *str, unsigned char *n)
+int	a2uc(char *str, unsigned char *n)
 {
 	long long	aux;
 	
