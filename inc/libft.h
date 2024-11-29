@@ -6,7 +6,7 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 13:44:19 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/11/28 18:23:56 by pepaloma         ###   ########.fr       */
+/*   Updated: 2024/11/29 09:44:14 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,7 @@ char		*ft_strtrim(char *s1, char const *set);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
 int			ft_strins(char **str_ptr, int snip_l, int snip_r, char *str_insert);
 char		*ft_gnl(int fd);
+int	ft_strcmp(const char *s1, const char *s2);
 
 t_list		*ft_lstnew(void *content);
 void		ft_lstadd_front(t_list **lst, t_list *new);
