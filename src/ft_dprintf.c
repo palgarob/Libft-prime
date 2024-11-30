@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_dprintf.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 12:10:02 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/11/21 12:10:20 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/11/29 09:37:06 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minirt.h"
+#include "libft.h"
 
 #define NUM "0123456789"
 #define HEX1 "0123456789abcdef"
