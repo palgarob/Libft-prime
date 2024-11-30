@@ -6,7 +6,7 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 13:44:19 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/11/28 18:23:56 by pepaloma         ###   ########.fr       */
+/*   Updated: 2024/11/29 00:10:27 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,12 @@ typedef struct s_vec
 	double	y;
 	double	z;
 }	t_vec;
+
+typedef struct	s_matrix
+{
+	double	m[4][4];
+}	t_matrix;
+
 
 typedef struct s_ray
 {
@@ -145,5 +151,8 @@ t_vec	vec_normalize(t_vec v);
 
 t_ray	ray(t_vec origin, t_vec orientation);
 t_vec	getpoint_ray(t_ray ray, double t);
+
+t_matrix camera_to_world_matrix(t_vec from, t_vec to);
+t_vec mat_vec_mult(t_matrix mat, t_vec vec);
 
 #endif
