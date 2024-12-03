@@ -33,23 +33,24 @@ typedef struct s_list
 }	t_list;
 
 // 3 dimensional vector
-typedef struct s_vec
+typedef struct s_vec3
 {
 	double	x;
 	double	y;
 	double	z;
-}	t_vec;
+}	t_vec3;
 
-typedef struct	s_matrix
+typedef struct s_mat3x3
 {
-	double	m[4][4];
-}	t_matrix;
-
+	t_vec3	i;
+	t_vec3	j;
+	t_vec3	k;
+} t_mat3x3;
 
 typedef struct s_ray
 {
-	t_vec	origin;
-	t_vec	orientation;
+	t_vec3	origin;
+	t_vec3	orientation;
 }	t_ray;
 
 int			ft_isalnum(int c);
@@ -128,21 +129,20 @@ int	get_b(int rgba);
 int	get_a(int rgba);
 int	get_color(double r, double g, double b);
 
-t_vec	vec(double x, double y, double z);
-t_vec	vec_scale_m(t_vec v, double scalar);
-t_vec	vec_scale_d(t_vec v, double scalar);
-t_vec	vec_add(t_vec a, t_vec b);
-t_vec	vec_sub(t_vec a, t_vec b);
-t_vec	vec_cross(t_vec a, t_vec b);
-double	vec_dot(t_vec a, t_vec b);
-double	vec_len(t_vec v);
-double	vec_lensquared(t_vec v);
-t_vec	vec_normalize(t_vec v);
+t_vec3	vec(double x, double y, double z);
+t_vec3	vec_scale_m(t_vec3 v, double scalar);
+t_vec3	vec_scale_d(t_vec3 v, double scalar);
+t_vec3	vec_add(t_vec3 a, t_vec3 b);
+t_vec3	vec_sub(t_vec3 a, t_vec3 b);
+t_vec3	vec_cross(t_vec3 a, t_vec3 b);
+double	vec_dot(t_vec3 a, t_vec3 b);
+double	vec_len(t_vec3 v);
+double	vec_lensquared(t_vec3 v);
+t_vec3	vec_normalize(t_vec3 v);
 
-t_ray	ray(t_vec origin, t_vec orientation);
-t_vec	getpoint_ray(t_ray ray, double t);
+t_ray	ray(t_vec3 origin, t_vec3 orientation);
+t_vec3	getpoint_ray(t_ray ray, double t);
 
-t_matrix camera_to_world_matrix(t_vec from, t_vec to);
-t_vec mat_vec_mult(t_matrix mat, t_vec vec);
+t_vec3	mat3x3xvec3(t_mat3x3 mat, t_vec3 vec);
 
 #endif

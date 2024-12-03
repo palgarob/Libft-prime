@@ -6,15 +6,15 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 18:14:53 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/11/28 18:19:19 by pepaloma         ###   ########.fr       */
+/*   Updated: 2024/12/03 18:04:00 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_vec	vec(double x, double y, double z)
+t_vec3	vec(double x, double y, double z)
 {
-	t_vec	v;
+	t_vec3	v;
 
 	v.x = x;
 	v.y = y;
@@ -22,7 +22,7 @@ t_vec	vec(double x, double y, double z)
 	return (v);
 }
 
-t_vec	vec_scale_m(t_vec v, double scalar)
+t_vec3	vec_scale_m(t_vec3 v, double scalar)
 {
 	v.x *= scalar;
 	v.y *= scalar;
@@ -30,7 +30,7 @@ t_vec	vec_scale_m(t_vec v, double scalar)
 	return (v);
 }
 
-t_vec	vec_scale_d(t_vec v, double scalar)
+t_vec3	vec_scale_d(t_vec3 v, double scalar)
 {
 	v.x /= scalar;
 	v.y /= scalar;
@@ -38,9 +38,9 @@ t_vec	vec_scale_d(t_vec v, double scalar)
 	return (v);
 }
 
-t_vec	vec_add(t_vec v, t_vec u)
+t_vec3	vec_add(t_vec3 v, t_vec3 u)
 {
-	t_vec	result;
+	t_vec3	result;
 
 	result.x = v.x + u.x;
 	result.y = v.y + u.y;
@@ -48,9 +48,9 @@ t_vec	vec_add(t_vec v, t_vec u)
 	return (result);
 }
 
-t_vec	vec_sub(t_vec v, t_vec u)
+t_vec3	vec_sub(t_vec3 v, t_vec3 u)
 {
-	t_vec	result;
+	t_vec3	result;
 
 	result.x = v.x - u.x;
 	result.y = v.y - u.y;
