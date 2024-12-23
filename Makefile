@@ -6,7 +6,7 @@
 #    By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/22 17:14:39 by pepaloma          #+#    #+#              #
-#    Updated: 2024/04/28 13:06:11 by pepaloma         ###   ########.fr        #
+#    Updated: 2024/12/23 21:32:29 by pepaloma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,9 +21,8 @@ RM				= rm -rf
 CFLAGS			= -Wall -Wextra -Werror
 VALGRIND_FLAGS	= -O0 -g
 
-FILES	= $(notdir $(wildcard src/*.c))
-SRC		= $(addprefix $(SRC_DIR)/, $(FILES))
-OBJ		= $(addprefix $(OBJ_DIR)/, $(FILES:.c=.o))
+SRC		= $(wildcard src/*.c)
+OBJ		= $(SRC:.c=.o)
 
 .PHONY: all re clean fclean
 #.SILENT :

@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/23 21:33:41 by pepaloma          #+#    #+#             */
+/*   Updated: 2024/12/23 21:45:58 by pepaloma         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
@@ -45,99 +56,88 @@ typedef struct s_mat3x3
 	t_vec3	i;
 	t_vec3	j;
 	t_vec3	k;
-}	t_mat3x3;
+} t_mat3x3;
 
 typedef struct s_ray
 {
 	t_vec3	origin;
-	t_vec3	direction;
+	t_vec3	orientation;
 }	t_ray;
 
-int		mat_inverse(t_mat3x3 *mat, t_mat3x3 *inv);
+bool		is_number(char *str);
+bool		is_double(const char *str);
 
-int		ft_isalnum(int c);
-int		ft_isalpha(int c);
-int		ft_isascii(int c);
-int		ft_isdigit(int c);
-int		ft_isprint(int c);
-bool	is_number(char *str);
-bool	is_double(const char *str);
+// is_something
+int			ft_isalnum(int c);
+int			ft_isalpha(int c);
+int			ft_isascii(int c);
+int			ft_isdigit(int c);
+int			ft_isprint(int c);
 
-void	*ft_calloc(size_t count, size_t size);
-void	ft_bzero(void *s, size_t n);
-void	*ft_memchr(const void *s, int c, size_t n);
-void	*ft_memcpy(void *dst, const void *src, size_t n);
-void	*ft_memmove(void *dst, const void *src, size_t len);
-void	*ft_memset(void *s, int c, size_t len);
-int		ft_memcmp(const void *s1, const void *s2, size_t n);
+// memory
+void		*ft_calloc(size_t count, size_t size);
+void		ft_bzero(void *s, size_t n);
+void		*ft_memchr(const void *s, int c, size_t n);
+void		*ft_memcpy(void *dst, const void *src, size_t n);
+void		*ft_memmove(void *dst, const void *src, size_t len);
+void		*ft_memset(void *s, int c, size_t len);
+int			ft_memcmp(const void *s1, const void *s2, size_t n);
 
-int		ft_atoi(const char *str);
-int		a2i(char *str, int *n);
-int		a2uc(char *str, unsigned char *n);
-char	*ft_itoa(int n);
-void	ft_putnbr_fd(int n, int fd);
-char	*ft_strchr(const char *s, int c);
-char	*ft_strdup(const char *s1);
-void	ft_striteri(char *s, void (*f)(unsigned int, char*));
-char	*ft_strjoin(char const *s1, char const *s2);
-char	*ft_strjoin_gnl(char *s1, char *s2);
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
-size_t	ft_strlen(const char *s);
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-int		ft_strncmp(const char *s1, const char *s2, size_t n);
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
-char	*ft_strrchr(const char *s, int c);
-char	*ft_strtrim(char *s1, char const *set);
-char	*ft_substr(char const *s, unsigned int start, size_t len);
-int		ft_strins(char **str_ptr, int snip_l, int snip_r, char *str_insert);
-char	*ft_gnl(int fd);
-int		ft_strcmp(const char *s1, const char *s2);
+// string
+int			ft_strncmp(const char *s1, const char *s2, size_t n);
+char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
+char		*ft_strrchr(const char *s, int c);
+char		*ft_strtrim(char *s1, char const *set);
+char		*ft_substr(char const *s, unsigned int start, size_t len);
+int			ft_strins(char **str_ptr, int snip_l, int snip_r, char *str_insert);
+char		*ft_strchr(const char *s, int c);
+char		*ft_strdup(const char *s1);
+void		ft_striteri(char *s, void (*f)(unsigned int, char*));
+char		*ft_strjoin(char const *s1, char const *s2);
+char		*ft_strjoin_gnl(char *s1, char *s2);
+size_t		ft_strlcat(char *dst, const char *src, size_t dstsize);
+size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize);
+size_t		ft_strlen(const char *s);
 
-t_list	*ft_lstnew(void *content);
-void	ft_lstadd_front(t_list **lst, t_list *new);
-int		ft_lstsize(t_list *lst);
-t_list	*ft_lstlast(t_list *lst);
-void	ft_lstadd_back(t_list **lst, t_list *new);
-void	ft_lstdelone(t_list *lst, void (*del)(void *));
-void	ft_lstclear(t_list **lst, void (*del)(void *));
-void	ft_lstiter(t_list *lst, void (*f)(void *));
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-t_list	*ft_lst2ndlast(t_list *lst);
-t_list	*ft_lstcpy(t_list *lst, void (*del)(void *));
+int			ft_atoi(const char *str);
+int			a2i(char *str, int *n);
+int			a2uc(char *str, unsigned char *n);
+char		*ft_itoa(int n);
+void		ft_putnbr_fd(int n, int fd);
+char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+char		*ft_gnl(int fd);
+int	ft_strcmp(const char *s1, const char *s2);
 
-int		ft_printf(char const *format, ...);
-int		ft_print_hex(unsigned int n, int lcase);
-int		ft_print_char(int c);
-int		ft_print_str(char *str);
-int		ft_print_ptr(void *ptr);
-int		ft_print_dec(int n);
-int		ft_print_uns(unsigned int n);
+// linked_lists
+t_list		*ft_lstnew(void *content);
+void		ft_lstadd_front(t_list **lst, t_list *new);
+int			ft_lstsize(t_list *lst);
+t_list		*ft_lstlast(t_list *lst);
+void		ft_lstadd_back(t_list **lst, t_list *new);
+void		ft_lstdelone(t_list *lst, void (*del)(void *));
+void		ft_lstclear(t_list **lst, void (*del)(void *));
+void		ft_lstiter(t_list *lst, void (*f)(void *));
+t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+t_list		*ft_lst2ndlast(t_list *lst);
+t_list		*ft_lstcpy(t_list *lst, void (*del)(void *));
 
-int		ft_dprintf(int fd, char const *s, ...);
+int			ft_printf(char const *format, ...);
+int			ft_print_hex(unsigned int n, int lcase);
+int			ft_print_char(int c);
+int			ft_print_str(char *str);
+int			ft_print_ptr(void *ptr);
+int			ft_print_dec(int n);
+int			ft_print_uns(unsigned int n);
 
-char	**splitstr(char const *s, char c);
-size_t	splitlen(char **array);
-void	splitcpy(char **src, char **dst);
-void	splitfree(char **split);
-char	**splitlast(char **split);
-int		splitadd(char *new_string, char ***split_ptr);
-char	**splitdup(char **src);
+int	ft_dprintf(int fd, char const *s, ...);
 
-t_vec3	vec(double x, double y, double z);
-t_vec3	vec_scale_m(t_vec3 v, double scalar);
-t_vec3	vec_scale_d(t_vec3 v, double scalar);
-t_vec3	vec_add(t_vec3 a, t_vec3 b);
-t_vec3	vec_sub(t_vec3 a, t_vec3 b);
-t_vec3	vec_cross(t_vec3 a, t_vec3 b);
-double	vec_dot(t_vec3 a, t_vec3 b);
-double	vec_len(t_vec3 v);
-double	vec_lensquared(t_vec3 v);
-t_vec3	vec_normalize(t_vec3 v);
-
-t_ray	ray_new(t_vec3 origin, t_vec3 orientation);
-t_vec3	get_intersection_point(t_ray *ray, double t);
-
-t_vec3	mat3x3xvec3(t_mat3x3 mat, t_vec3 vec);
+// split
+char		**splitstr(char const *s, char c);
+size_t		splitlen(char **array);
+void		splitcpy(char **src, char **dst);
+void		splitfree(char **split);
+char		**splitlast(char **split);
+int			splitadd(char *new_string, char ***split_ptr);
+char		**splitdup(char **src);
 
 #endif
