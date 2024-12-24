@@ -6,22 +6,21 @@
 #    By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/22 17:14:39 by pepaloma          #+#    #+#              #
-#    Updated: 2024/12/23 21:32:29 by pepaloma         ###   ########.fr        #
+#    Updated: 2024/12/24 12:56:19 by pepaloma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= libft.a
 
 SRC_DIR	= src
-OBJ_DIR	= obj
 INC_DIR	= inc
 
-CC				= gcc
+CC				= cc
 RM				= rm -rf
 CFLAGS			= -Wall -Wextra -Werror
-VALGRIND_FLAGS	= -O0 -g
+HEADERS			= -I$(INC_DIR)
 
-SRC		= $(wildcard src/*.c)
+SRC		= $(wildcard src/*/*.c src/*.c)
 OBJ		= $(SRC:.c=.o)
 
 .PHONY: all re clean fclean
@@ -32,9 +31,8 @@ all : $(NAME)
 $(NAME) : $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
-$(OBJ_DIR)/%.o : $(SRC_DIR)/%.c
-	mkdir -p $(OBJ_DIR)
-	$(CC) $(CFLAGS) -I$(INC_DIR) $(VALGRIND_FLAGS) -c $< -o $@
+%.o : %.c
+	$(CC) $(HEADERS) $(CFLAGS) -c $< -o $@
 
 re : fclean all
 
@@ -42,4 +40,4 @@ fclean : clean
 	$(RM) $(NAME)
 
 clean :
-	$(RM) $(OBJ_DIR)
+	$(RM) $(OBJ)
