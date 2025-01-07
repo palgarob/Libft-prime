@@ -6,7 +6,7 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 21:33:41 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/12/23 21:45:58 by pepaloma         ###   ########.fr       */
+/*   Updated: 2025/01/07 11:35:53 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,27 +43,6 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
-// 3 dimensional vector
-typedef struct s_vec3
-{
-	double	x;
-	double	y;
-	double	z;
-}	t_vec3;
-
-typedef struct s_mat3x3
-{
-	t_vec3	i;
-	t_vec3	j;
-	t_vec3	k;
-} t_mat3x3;
-
-typedef struct s_ray
-{
-	t_vec3	origin;
-	t_vec3	orientation;
-}	t_ray;
-
 bool		is_number(char *str);
 bool		is_double(const char *str);
 
@@ -73,6 +52,9 @@ int			ft_isalpha(int c);
 int			ft_isascii(int c);
 int			ft_isdigit(int c);
 int			ft_isprint(int c);
+int is_rgb(char **split);
+int is_coord(char **split);
+int is_normalized_vec(char *vec);
 
 // memory
 void		*ft_calloc(size_t count, size_t size);
@@ -106,7 +88,8 @@ char		*ft_itoa(int n);
 void		ft_putnbr_fd(int n, int fd);
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char		*ft_gnl(int fd);
-int	ft_strcmp(const char *s1, const char *s2);
+int			ft_strcmp(const char *s1, const char *s2);
+double		to_double(const char *str);
 
 // linked_lists
 t_list		*ft_lstnew(void *content);
