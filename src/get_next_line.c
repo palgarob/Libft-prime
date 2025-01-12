@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_gnl.c                                           :+:      :+:    :+:   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 14:12:09 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/04/27 23:36:16 by pepaloma         ###   ########.fr       */
+/*   Updated: 2025/01/12 19:10:13 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ static char	*expand_block(char **block, int fd)
 	return (*block);
 }
 
-char	*ft_gnl(int fd)
+char	*get_next_line(int fd)
 {
 	static char	*block = 0;
 	char		*line;

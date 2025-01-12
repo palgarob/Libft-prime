@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/23 21:33:41 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/12/23 21:45:58 by pepaloma         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef LIBFT_H
 # define LIBFT_H
 
@@ -105,8 +93,9 @@ int			a2uc(char *str, unsigned char *n);
 char		*ft_itoa(int n);
 void		ft_putnbr_fd(int n, int fd);
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-char		*ft_gnl(int fd);
-int	ft_strcmp(const char *s1, const char *s2);
+char		*get_next_line(int fd);
+int			ft_strcmp(const char *s1, const char *s2);
+double		to_double(const char *str);
 
 // linked_lists
 t_list		*ft_lstnew(void *content);
