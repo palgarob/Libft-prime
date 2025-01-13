@@ -1,44 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_hex.c                                     :+:      :+:    :+:   */
+/*   ft_print_uns.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/11 16:04:50 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/04/27 23:37:37 by pepaloma         ###   ########.fr       */
+/*   Created: 2023/10/28 13:20:05 by pedropalomare     #+#    #+#             */
+/*   Updated: 2025/01/13 12:17:00 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-static void	write_hex_up(unsigned int n)
+static void	write_dec(int fd, unsigned int n)
 {
-	if (n >= 16)
-		write_hex_up(n / 16);
-	write(1, &HEXADECIMAL_UP[n % 16], 1);
+	if (n >= 10)
+		write_dec(fd, n / 10);
+	write(fd, &DECIMAL[n % 10], 1);
 }
 
-static void	write_hex_lo(unsigned int n)
-{
-	if (n >= 16)
-		write_hex_lo(n / 16);
-	write(1, &HEXADECIMAL_LO[n % 16], 1);
-}
-
-int	ft_print_hex(unsigned int n, int lcase)
+int	ft_print_uns(int fd, unsigned int n)
 {
 	int	i;
 
+	write_dec(fd, n);
 	i = 0;
-	if (lcase)
-		write_hex_up(n);
-	else
-		write_hex_lo(n);
-	while (n / 16)
+	while (n / 10)
 	{
 		i++;
-		n /= 16;
+		n /= 10;
 	}
 	return (i + 1);
 }

@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_str.c                                     :+:      :+:    :+:   */
+/*   vec_from_to.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/24 16:11:41 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/04/28 00:18:22 by pepaloma         ###   ########.fr       */
+/*   Created: 2024/12/23 21:10:37 by pepaloma          #+#    #+#             */
+/*   Updated: 2024/12/23 21:10:45 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "minirt.h"
 
-int	ft_print_str(char *str)
+/*
+ * @return vector from one point to another
+ */
+t_vec	vec_from_to(t_pnt from, t_pnt to)
 {
-	int	n;
-
-	if (!str)
-	{
-		write(1, "(null)", 6);
-		return (6);
-	}
-	n = ft_strlen(str);
-	write(1, str, n);
-	return (n);
+	return (tpl_sub(to, from));
 }

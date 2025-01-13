@@ -1,34 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_uns.c                                     :+:      :+:    :+:   */
+/*   ft_print_ptr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/28 13:20:05 by pedropalomare     #+#    #+#             */
-/*   Updated: 2024/04/28 00:18:25 by pepaloma         ###   ########.fr       */
+/*   Created: 2023/10/24 16:15:03 by pepaloma          #+#    #+#             */
+/*   Updated: 2025/01/13 12:19:38 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-static void	write_dec(unsigned int n)
+static void	write_hex_ptr(int fd, unsigned long long n)
 {
-	if (n >= 10)
-		write_dec(n / 10);
-	write(1, &DECIMAL[n % 10], 1);
+	if (n >= 16)
+		write_hex_ptr(fd, n / 16);
+	write(fd, &HEXADECIMAL_LO[n % 16], 1);
 }
 
-int	ft_print_uns(unsigned int n)
+int	ft_print_ptr(int fd, void *ptr)
 {
-	int	i;
+	unsigned long long	p;
+	int					i;
 
-	write_dec(n);
 	i = 0;
-	while (n / 10)
+	p = (unsigned long long)ptr;
+	write(fd, "0x", 2);
+	write_hex_ptr(fd, p);
+	while (p / 16)
 	{
+		p /= 16;
 		i++;
-		n /= 10;
 	}
-	return (i + 1);
+	return (i + 3);
 }

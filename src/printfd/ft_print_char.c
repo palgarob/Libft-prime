@@ -6,14 +6,13 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:07:30 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/04/28 00:17:51 by pepaloma         ###   ########.fr       */
+/*   Updated: 2025/01/13 12:22:18 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-int	ft_print_char(int c)
+int	ft_print_char(int fd, int c)
 {
-	write(1, &c, 1);
-	return (1);
+	return (write(fd, &c, 1));
 }
