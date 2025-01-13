@@ -6,11 +6,11 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 16:04:50 by pepaloma          #+#    #+#             */
-/*   Updated: 2025/01/13 12:20:40 by pepaloma         ###   ########.fr       */
+/*   Updated: 2025/01/13 23:48:13 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 static void	write_hex_up(int fd, unsigned int n)
 {

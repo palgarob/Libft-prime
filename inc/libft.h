@@ -6,7 +6,7 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 20:22:25 by pepaloma          #+#    #+#             */
-/*   Updated: 2025/01/13 20:10:50 by pepaloma         ###   ########.fr       */
+/*   Updated: 2025/01/13 23:44:42 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,24 @@ typedef struct s_color
 
 t_color	color(double r, double g, double b);
 t_color	color_blend(t_color a, t_color b);
+
+/* TUPLES                                                                     */
+struct s_tpl
+{
+	double	x;
+	double	y;
+	double	z;
+	double	w;
+};
+
+bool			tpl_equal(struct s_tpl a, struct s_tpl b);
+struct s_tpl	tpl_negate(struct s_tpl tpl);
+struct s_tpl	tpl_add(struct s_tpl a, struct s_tpl b);
+struct s_tpl	tpl_sub(struct s_tpl a, struct s_tpl b);
+struct s_tpl	tpl_multiply(struct s_tpl, double scalar);
+struct s_tpl	tpl_divide(struct s_tpl, double scalar);
+struct s_tpl	tpl(double x, double y, double z, double w);
+struct s_tpl	tpl_multiply_matrix(double mat[4][4], struct s_tpl tpl);
 
 // is_something
 int	ft_isalnum(int c);
@@ -134,24 +152,6 @@ void		splitfree(char **split);
 char		**splitlast(char **split);
 int			splitadd(char *new_string, char ***split_ptr);
 char		**splitdup(char **src);
-
-/* TUPLES                                                                     */
-struct s_tpl
-{
-	double	x;
-	double	y;
-	double	z;
-	double	w;
-};
-
-bool			tpl_equal(struct s_tpl a, struct s_tpl b);
-struct s_tpl	tpl_negate(struct s_tpl tpl);
-struct s_tpl	tpl_add(struct s_tpl a, struct s_tpl b);
-struct s_tpl	tpl_sub(struct s_tpl a, struct s_tpl b);
-struct s_tpl	tpl_multiply(struct s_tpl, double scalar);
-struct s_tpl	tpl_divide(struct s_tpl, double scalar);
-struct s_tpl	tpl(double x, double y, double z, double w);
-struct s_tpl	tpl_multiply_matrix(double mat[4][4], struct s_tpl tpl);
 
 /* POINTS AND VECTORS                                                         */
 typedef struct s_tpl t_pnt, t_vec;

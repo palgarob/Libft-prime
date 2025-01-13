@@ -6,7 +6,7 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 18:07:16 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/11/29 09:41:15 by pepaloma         ###   ########.fr       */
+/*   Updated: 2025/01/13 23:45:26 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ bool	is_double(const char *str)
 		return (false);
 	split = splitstr(str, '.');
 	if (!split)
-		return (ft_printf("Split error\n"), false);
+		return (false);
 	if (splitlen(split) == 1 && is_number(split[0]))
 		return (splitfree(split), true);
 	if (splitlen(split) != 2)

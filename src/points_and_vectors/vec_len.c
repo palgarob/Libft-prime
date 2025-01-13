@@ -6,11 +6,11 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 21:11:05 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/12/23 21:11:15 by pepaloma         ###   ########.fr       */
+/*   Updated: 2025/01/13 23:47:26 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minirt.h"
+#include "libft.h"
 
 double	vec_len(t_vec vector)
 {

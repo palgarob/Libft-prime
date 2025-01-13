@@ -6,11 +6,11 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 13:20:05 by pedropalomare     #+#    #+#             */
-/*   Updated: 2025/01/13 12:17:00 by pepaloma         ###   ########.fr       */
+/*   Updated: 2025/01/13 23:48:24 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 static void	write_dec(int fd, unsigned int n)
 {

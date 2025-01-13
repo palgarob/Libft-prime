@@ -6,11 +6,11 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:07:30 by pepaloma          #+#    #+#             */
-/*   Updated: 2025/01/13 12:22:18 by pepaloma         ###   ########.fr       */
+/*   Updated: 2025/01/13 23:48:01 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 int	ft_print_char(int fd, int c)
 {

@@ -6,11 +6,11 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 21:14:28 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/12/23 21:14:39 by pepaloma         ###   ########.fr       */
+/*   Updated: 2025/01/13 23:45:03 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minirt.h"
+#include "libft.h"
 
 t_color	color_blend(t_color a, t_color b)
 {

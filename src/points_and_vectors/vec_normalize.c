@@ -6,11 +6,11 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 21:11:30 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/12/23 21:11:38 by pepaloma         ###   ########.fr       */
+/*   Updated: 2025/01/13 23:47:30 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minirt.h"
+#include "libft.h"
 
 t_vec	vec_normalize(t_vec vector)
 {

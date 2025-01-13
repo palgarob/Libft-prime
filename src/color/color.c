@@ -6,11 +6,11 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 21:13:59 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/12/23 21:14:10 by pepaloma         ###   ########.fr       */
+/*   Updated: 2025/01/13 23:44:55 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minirt.h"
+#include "libft.h"
 
 t_color	color(double r, double g, double b)
 {
