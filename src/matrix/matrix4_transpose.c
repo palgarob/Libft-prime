@@ -1,21 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   a2double.c                                         :+:      :+:    :+:   */
+/*   matrix4_transpose.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/13 20:06:12 by pepaloma          #+#    #+#             */
-/*   Updated: 2025/01/14 10:26:34 by pepaloma         ###   ########.fr       */
+/*   Created: 2024/12/24 00:59:54 by pepaloma          #+#    #+#             */
+/*   Updated: 2025/01/14 16:38:24 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	a2double(double *dst, char *src)
+void	matrix4_transpose(double mat[4][4])
 {
-	if (!is_double(src))
-		return (1);
-	*dst = to_double(src);
-	return (0);
+	double	cpy[4][4];
+	int		i;
+	int		j;
+
+	matrix_cpy(mat, cpy);
+	j = 0;
+	while (j < 4)
+	{
+		i = 0;
+		while (i < 4)
+			mat[i][j] = cpy[j][i];
+		j++;
+	}
 }

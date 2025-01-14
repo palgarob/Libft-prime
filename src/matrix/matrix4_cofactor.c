@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   a2double.c                                         :+:      :+:    :+:   */
+/*   matrix4_cofactor.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/13 20:06:12 by pepaloma          #+#    #+#             */
-/*   Updated: 2025/01/14 10:26:34 by pepaloma         ###   ########.fr       */
+/*   Created: 2024/12/24 10:42:14 by pepaloma          #+#    #+#             */
+/*   Updated: 2025/01/14 16:38:24 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	a2double(double *dst, char *src)
+double	matrix4_cofactor(double mat4[4][4], int row, int column)
 {
-	if (!is_double(src))
-		return (1);
-	*dst = to_double(src);
-	return (0);
+	if ((row + column) % 2)
+		return (-matrix4_minor(mat4, row, column));
+	return (matrix4_minor(mat4, row, column));
 }

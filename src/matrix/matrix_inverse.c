@@ -1,21 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   a2double.c                                         :+:      :+:    :+:   */
+/*   matrix_inverse.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/13 20:06:12 by pepaloma          #+#    #+#             */
-/*   Updated: 2025/01/14 10:26:34 by pepaloma         ###   ########.fr       */
+/*   Created: 2024/12/24 11:04:35 by pepaloma          #+#    #+#             */
+/*   Updated: 2025/01/14 16:38:24 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	a2double(double *dst, char *src)
+bool	matrix_inverse(double mat4[4][4], double inv[4][4])
 {
-	if (!is_double(src))
-		return (1);
-	*dst = to_double(src);
-	return (0);
+	double	determinant;
+	int		i;
+	int		j;
+
+	determinant = matrix4_det(mat4);
+	if (determinant == 0)
+		return (false);
+	j = 0;
+	while (j < 4)
+	{
+		i = 0;
+		while (i < 4)
+		{
+			inv[i][j] = matrix4_cofactor(mat4, j, i) / determinant;
+			i++;
+		}
+		j++;
+	}
+	return (true);
 }

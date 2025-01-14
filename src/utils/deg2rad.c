@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   a2double.c                                         :+:      :+:    :+:   */
+/*   deg2rad.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/13 20:06:12 by pepaloma          #+#    #+#             */
-/*   Updated: 2025/01/14 10:26:34 by pepaloma         ###   ########.fr       */
+/*   Created: 2024/12/29 19:14:17 by pepaloma          #+#    #+#             */
+/*   Updated: 2025/01/14 21:24:29 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	a2double(double *dst, char *src)
+double	deg2rad(double deg)
 {
-	if (!is_double(src))
-		return (1);
-	*dst = to_double(src);
-	return (0);
+	return (deg * M_PI / 180);
 }

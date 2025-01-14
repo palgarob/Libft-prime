@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   a2double.c                                         :+:      :+:    :+:   */
+/*   tpl_add.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/13 20:06:12 by pepaloma          #+#    #+#             */
-/*   Updated: 2025/01/14 10:26:34 by pepaloma         ###   ########.fr       */
+/*   Created: 2024/12/23 21:02:52 by pepaloma          #+#    #+#             */
+/*   Updated: 2025/01/14 21:24:15 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	a2double(double *dst, char *src)
+struct s_tpl	tpl_add(struct s_tpl a, struct s_tpl b)
 {
-	if (!is_double(src))
-		return (1);
-	*dst = to_double(src);
-	return (0);
+	a.x += b.x;
+	a.y += b.y;
+	a.z += b.z;
+	a.w += b.w;
+	return (a);
 }

@@ -6,7 +6,7 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 20:22:25 by pepaloma          #+#    #+#             */
-/*   Updated: 2025/01/13 23:44:42 by pepaloma         ###   ########.fr       */
+/*   Updated: 2025/01/14 21:25:08 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,13 @@
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
 # endif
+
+/* ERROR MESSAGES                                                             */
+# define INVALID_MATRIX_SIZE "Error \nDon't compare matrixes other than \
+2x2, 3x3, 4x4\n"
+
+/* PREPROCESSOR PARAMETERS                                                    */
+# define EPSILON 0.00001
 
 // Linked lists
 typedef struct s_list
@@ -81,8 +88,8 @@ int	ft_isalpha(int c);
 int	ft_isascii(int c);
 int	ft_isdigit(int c);
 int	ft_isprint(int c);
-int	is_rgb(t_color *dst, char *src);
-int	is_coord(struct s_tpl *dst, char *src);
+bool	is_rgb(t_color *dst, char *src);
+bool	is_coord(struct s_tpl *dst, char *src);
 int	is_normalized_vec(char *vec);
 
 // memory
@@ -166,5 +173,53 @@ double			vec_len(t_vec vector);
 t_vec			vec_normalize(t_vec vector);
 double			vec_dot(t_vec a, t_vec b);
 t_vec			vec_cross(t_vec a, t_vec b);
+
+/* MATRIX                                                                     */
+bool	matrix_is_equal(double a[4][4], double b[4][4], size_t size);
+void	matrix_multiply(double a[4][4], double b[4][4], double result[4][4]);
+void	matrix_transpose(double **mat);
+void	matrix_cpy(double src[4][4], double cpy[4][4]);
+double	matrix2_det(double mat2[2][2]);
+void	submatrix4(double mat4[4][4], double mat3[3][3], int row, int column);
+void	submatrix3(double mat3[3][3], double mat2[2][2], int row, int column);
+double	matrix3_minor(double mat3[3][3], int row, int column);
+double	matrix4_minor(double mat4[4][4], int row, int column);
+double	matrix3_cofactor(double mat3[3][3], int row, int column);
+double	matrix4_cofactor(double mat4[4][4], int row, int column);
+double	matrix3_det(double mat3[3][3]);
+double	matrix4_det(double mat4[4][4]);
+bool	matrix_inverse(double mat4[4][4], double inv[4][4]);
+void	matrix4_print(double mat4[4][4]);
+void	matrix_get_identity(double mat[4][4]);
+
+/* TRANSFORMATIONS                                                            */
+typedef struct s_transformation
+{
+
+	double	diameter;
+	double	height;
+	t_vec	orientation;
+	t_pnt	location;
+}	t_transformation;
+
+void	translation(double mat[4][4], t_vec *v);
+void	scaling(double mat[4][4], t_vec *values);
+void	rotation_x(double mat[4][4], double degrees);
+void	rotation_y(double mat[4][4], double degrees);
+void	rotation_z(double mat[4][4], double degrees);
+t_pnt	transform(double mat[4][4], t_pnt point);
+t_pnt	transform_inv(double mat[4][4], t_pnt point);
+void	rotation(double mat[4][4], t_vec *v);
+
+/* UTILS                                                                      */
+typedef enum e_comp_result
+{
+	EQUAL,
+	A_LESST_B,
+	A_GREAT_B
+}	t_comp;
+
+t_comp			fpn_compare(double a, double b);
+double			deg2rad(double deg);
 
 #endif

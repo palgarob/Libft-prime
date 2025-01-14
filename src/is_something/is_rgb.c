@@ -6,7 +6,7 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 10:54:52 by pepaloma          #+#    #+#             */
-/*   Updated: 2025/01/13 23:45:55 by pepaloma         ###   ########.fr       */
+/*   Updated: 2025/01/14 10:29:42 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,16 @@ int good_format(char **split)
 	return (1);
 }
 
-int	is_rgb(t_color *dst, char *org)
+bool	is_rgb(t_color *dst, char *org)
 {
 	char	**split;
 
 	split = splitstr(org, ',');
 	if (!split)
-		return (0);
+		return (false);
 	if (!good_format(split))
-		return (splitfree(split), 0);
+		return (splitfree(split), false);
 	*dst = color(ft_atoi(split[0]), ft_atoi(split[1]),
 			ft_atoi(split[2]));
-	return (splitfree(split), 1);
+	return (splitfree(split), true);
 }
