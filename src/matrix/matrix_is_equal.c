@@ -6,7 +6,7 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 23:09:18 by pepaloma          #+#    #+#             */
-/*   Updated: 2025/01/14 16:38:24 by pepaloma         ###   ########.fr       */
+/*   Updated: 2025/01/15 01:10:57 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,5 @@ bool	matrix_is_equal(double a[4][4], double b[4][4], size_t size)
 		return (comp3(a, b));
 	if (size == 4)
 		return (comp4(a, b));
-	return (printf(INVALID_MATRIX_SIZE), false);
+	return (printfd(STDERR_FILENO, INVALID_MATRIX_SIZE), false);
 }

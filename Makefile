@@ -6,19 +6,26 @@
 #    By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/22 17:14:39 by pepaloma          #+#    #+#              #
-#    Updated: 2024/12/24 12:56:19 by pepaloma         ###   ########.fr        #
+#    Updated: 2025/01/15 01:38:41 by pepaloma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+# The Target Binary Program
 NAME	= libft.a
 
-SRC_DIR	= src
-INC_DIR	= inc
+# Directories
+SRC_DIR		= src
+INC_DIR		= inc
+BUILDDIR	= obj
 
+# Compiler, flags includes
 CC				= cc
-RM				= rm -rf
 CFLAGS			= -Wall -Wextra -Werror
 HEADERS			= -I$(INC_DIR)
+
+#-------------------------------------------------------------------------------
+#DO NOT EDIT BELOW THIS LINE
+#-------------------------------------------------------------------------------
 
 SRC		= $(wildcard src/*/*.c src/*.c)
 OBJ		= $(SRC:.c=.o)
@@ -37,7 +44,7 @@ $(NAME) : $(OBJ)
 re : fclean all
 
 fclean : clean
-	$(RM) $(NAME)
+	rm -f $(NAME)
 
 clean :
-	$(RM) $(OBJ)
+	rm -rf $(OBJ)

@@ -6,7 +6,7 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 13:03:27 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/04/27 23:36:30 by pepaloma         ###   ########.fr       */
+/*   Updated: 2025/01/15 01:10:17 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ char	*ft_itoa(int n)
 	len = nbrlen(n);
 	s = (char *)malloc(sizeof(char) * len + 1);
 	if (!s)
-		return (perror(NULL), NULL);
+		return (NULL);
 	s[len] = 0;
 	write_nb(s, n, len);
 	return (s);

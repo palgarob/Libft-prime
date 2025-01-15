@@ -6,7 +6,7 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 03:00:01 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/11/28 15:49:00 by pepaloma         ###   ########.fr       */
+/*   Updated: 2025/01/15 01:11:30 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	splitadd(char *new_string, char ***split_ptr)
 	len = splitlen(*split_ptr);
 	new_split = (char **)malloc(sizeof(char *) * (len + 2));
 	if (!new_split)
-		return (perror(0), 1);
+		return (1);
 	splitcpy(*split_ptr, new_split);
 	free(*split_ptr);
 	new_split[len] = new_string;

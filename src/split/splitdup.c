@@ -6,7 +6,7 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 20:22:30 by pepaloma          #+#    #+#             */
-/*   Updated: 2024/11/28 15:49:00 by pepaloma         ###   ########.fr       */
+/*   Updated: 2025/01/15 01:11:46 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	**splitdup(char **src)
 	len = splitlen(src);
 	dup = (char **)malloc(sizeof(char *) * (len + 1));
 	if (!dup)
-		return (perror(NULL), NULL);
+		return (NULL);
 	aux = dup;
 	while (*src)
 	{
