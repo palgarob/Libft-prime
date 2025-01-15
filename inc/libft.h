@@ -6,7 +6,7 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 20:22:25 by pepaloma          #+#    #+#             */
-/*   Updated: 2025/01/15 01:38:14 by pepaloma         ###   ########.fr       */
+/*   Updated: 2025/01/15 03:12:22 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -187,14 +187,6 @@ void	matrix4_print(double mat4[4][4]);
 void	matrix_get_identity(double mat[4][4]);
 
 /* TRANSFORMATIONS                                                            */
-typedef struct s_transformation
-{
-	double	diameter;
-	double	height;
-	t_vec	orientation;
-	t_pnt	location;
-}	t_transformation;
-
 void	translation(double mat[4][4], t_vec *v);
 void	scaling(double mat[4][4], t_vec *values);
 void	rotation_x(double mat[4][4], double degrees);
