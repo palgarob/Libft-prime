@@ -6,7 +6,7 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 20:22:25 by pepaloma          #+#    #+#             */
-/*   Updated: 2025/01/15 03:12:22 by pepaloma         ###   ########.fr       */
+/*   Updated: 2025/01/15 12:16:30 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -171,7 +171,7 @@ t_vec			vec_cross(t_vec a, t_vec b);
 /* MATRIX                                                                     */
 bool	matrix_is_equal(double a[4][4], double b[4][4], size_t size);
 void	matrix_multiply(double a[4][4], double b[4][4], double result[4][4]);
-void	matrix_transpose(double **mat);
+void	matrix4_transpose(double mat[4][4]);
 void	matrix_cpy(double src[4][4], double cpy[4][4]);
 double	matrix2_det(double mat2[2][2]);
 void	submatrix4(double mat4[4][4], double mat3[3][3], int row, int column);
