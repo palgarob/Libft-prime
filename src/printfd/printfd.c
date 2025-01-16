@@ -6,7 +6,7 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 18:10:25 by pepaloma          #+#    #+#             */
-/*   Updated: 2025/01/13 12:27:07 by pepaloma         ###   ########.fr       */
+/*   Updated: 2025/01/16 08:44:08 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static int	write_format(int fd, const char c, va_list *ptr)
 	if (c == '%')
 		return (write(fd, "\%", 1));
 	else
-		return (write(fd, "UNSPECIFIED FORMAT", 20));
+		return (write(fd, "UNSPECIFIED FORMAT", 18));
 }
 
 int	printfd(int fd, char const *format, ...)
