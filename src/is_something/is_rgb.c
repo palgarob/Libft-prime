@@ -6,7 +6,7 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 10:54:52 by pepaloma          #+#    #+#             */
-/*   Updated: 2025/01/14 10:29:42 by pepaloma         ###   ########.fr       */
+/*   Updated: 2025/01/16 09:39:29 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ bool	is_rgb(t_color *dst, char *org)
 		return (false);
 	if (!good_format(split))
 		return (splitfree(split), false);
-	*dst = color(ft_atoi(split[0]), ft_atoi(split[1]),
-			ft_atoi(split[2]));
+	*dst = color(ft_atoi(split[0]) / 255, ft_atoi(split[1]) / 255,
+			ft_atoi(split[2]) / 255);
 	return (splitfree(split), true);
 }

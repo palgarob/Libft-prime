@@ -6,7 +6,7 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 20:22:25 by pepaloma          #+#    #+#             */
-/*   Updated: 2025/01/15 12:16:30 by pepaloma         ###   ########.fr       */
+/*   Updated: 2025/01/16 11:37:02 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,10 @@ typedef struct s_color
 
 t_color	color(double r, double g, double b);
 t_color	color_blend(t_color a, t_color b);
+t_color	color_mul(t_color c, double fpnd);
+t_color	color_add(t_color a, t_color b);
+t_color	color_sub(t_color a, t_color b);
+
 
 /* TUPLES                                                                     */
 struct s_tpl
