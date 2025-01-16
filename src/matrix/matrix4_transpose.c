@@ -6,7 +6,7 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/24 00:59:54 by pepaloma          #+#    #+#             */
-/*   Updated: 2025/01/14 16:38:24 by pepaloma         ###   ########.fr       */
+/*   Updated: 2025/01/16 08:45:37 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,10 @@ void	matrix4_transpose(double mat[4][4])
 	{
 		i = 0;
 		while (i < 4)
+		{
 			mat[i][j] = cpy[j][i];
+			i++;
+		}
 		j++;
 	}
 }
