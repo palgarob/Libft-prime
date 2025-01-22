@@ -17,5 +17,11 @@ t_color	color_mul(t_color c, double fpnd)
 	c.r *= fpnd;
 	c.g *= fpnd;
 	c.b *= fpnd;
+	if (c.r > 1)
+		c.r = 1;
+	if (c.g > 1)
+		c.g = 1;
+	if (c.b > 1)
+		c.b = 1;
 	return (c);
 }

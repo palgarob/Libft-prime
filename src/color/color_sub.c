@@ -17,5 +17,11 @@ t_color	color_sub(t_color a, t_color b)
 	a.r -= b.r;
 	a.g -= b.g;
 	a.b -= b.b;
+	if (a.r < 0)
+		a.r = 0;
+	if (a.g < 0)
+		a.g = 0;
+	if (a.b < 0)
+		a.b = 0;
 	return (a);
 }
