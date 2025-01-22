@@ -28,7 +28,7 @@ HEADERS			= -I$(INC_DIR)
 #-------------------------------------------------------------------------------
 
 SRC		= $(wildcard src/*/*.c src/*.c)
-OBJ		= $(SRC:.c=.o)
+OBJ		= $(patsubst $(SRC_DIR)/%, $(BUILDDIR)/%, $(SRC:.c=.o))
 
 .PHONY: all re clean fclean
 #.SILENT :
@@ -38,7 +38,8 @@ all : $(NAME)
 $(NAME) : $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
-%.o : %.c
+$(BUILDDIR)/%.o : $(SRC_DIR)/%.c
+	mkdir -p $(dir $@)
 	$(CC) $(HEADERS) $(CFLAGS) -c $< -o $@
 
 re : fclean all
@@ -47,4 +48,4 @@ fclean : clean
 	rm -f $(NAME)
 
 clean :
-	rm -rf $(OBJ)
+	rm -rf $(BUILDDIR)
