@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   is_rgb.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 10:54:52 by pepaloma          #+#    #+#             */
-/*   Updated: 2025/01/16 09:39:29 by pepaloma         ###   ########.fr       */
+/*   Updated: 2025/01/29 13:56:15 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ bool	is_rgb(t_color *dst, char *org)
 		return (false);
 	if (!good_format(split))
 		return (splitfree(split), false);
-	*dst = color(ft_atoi(split[0]) / 255, ft_atoi(split[1]) / 255,
-			ft_atoi(split[2]) / 255);
+	*dst = color((double)ft_atoi(split[0]) / 255.0, (double)ft_atoi(split[1]) / 255.0,
+			(double)ft_atoi(split[2]) / 255.0);
 	return (splitfree(split), true);
 }
