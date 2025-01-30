@@ -6,7 +6,7 @@
 #    By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/22 17:14:39 by pepaloma          #+#    #+#              #
-#    Updated: 2025/01/15 01:38:41 by pepaloma         ###   ########.fr        #
+#    Updated: 2025/01/30 10:15:17 by pepaloma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ NAME	= libft.a
 # Directories
 SRC_DIR		= src
 INC_DIR		= inc
-BUILDDIR	= obj
+OBJ_DIR	= obj
 
 # Compiler, flags includes
 CC				= cc
@@ -27,18 +27,19 @@ HEADERS			= -I$(INC_DIR)
 #DO NOT EDIT BELOW THIS LINE
 #-------------------------------------------------------------------------------
 
-SRC		= $(wildcard src/*/*.c src/*.c)
-OBJ		= $(SRC:.c=.o)
+SRC_FILES := $(shell find $(SRC_DIR) -type f -name '*.c')
+OBJ_FILES := $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRC_FILES))
 
 .PHONY: all re clean fclean
 #.SILENT :
 
 all : $(NAME)
 
-$(NAME) : $(OBJ)
-	ar rcs $(NAME) $(OBJ)
+$(NAME) : $(OBJ_FILES)
+	ar rcs $(NAME) $(OBJ_FILES)
 
-%.o : %.c
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+	mkdir -p $(dir $@)
 	$(CC) $(HEADERS) $(CFLAGS) -c $< -o $@
 
 re : fclean all
@@ -47,4 +48,4 @@ fclean : clean
 	rm -f $(NAME)
 
 clean :
-	rm -rf $(OBJ)
+	rm -f $(OBJ_FILES)
