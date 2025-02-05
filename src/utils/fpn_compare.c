@@ -6,7 +6,7 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 21:16:40 by pepaloma          #+#    #+#             */
-/*   Updated: 2025/01/14 21:24:21 by pepaloma         ###   ########.fr       */
+/*   Updated: 2025/02/05 16:00:35 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@
  */
 t_comp	fpn_compare(double a, double b)
 {
-	if (a - b < EPSILON)
+	if (fabs(a - b) < EPSILON)
 		return (EQUAL);
 	if (a - b < 0)
 		return (A_LESST_B);
