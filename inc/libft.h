@@ -6,7 +6,7 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 20:22:25 by pepaloma          #+#    #+#             */
-/*   Updated: 2025/01/16 11:37:02 by pepaloma         ###   ########.fr       */
+/*   Updated: 2025/02/05 16:40:28 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ struct s_tpl	tpl_multiply(struct s_tpl, double scalar);
 struct s_tpl	tpl_divide(struct s_tpl, double scalar);
 struct s_tpl	tpl(double x, double y, double z, double w);
 struct s_tpl	tpl_multiply_matrix(double mat[4][4], struct s_tpl tpl);
+void	print_tpl(struct s_tpl t);
 
 /* IS_SOMETHING                                                               */
 int	ft_isalnum(int c);
