@@ -6,7 +6,7 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 21:44:16 by pepaloma          #+#    #+#             */
-/*   Updated: 2025/01/14 16:32:20 by pepaloma         ###   ########.fr       */
+/*   Updated: 2025/02/05 14:37:15 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,14 @@
 void	rotation(double mat[4][4], t_vec *v)
 {
 	t_vec	aux;
+	t_vec	up;
 
-	aux = vec_cross(vec(0, 1, 0), *v);
+	if ((fpn_compare(v->x, 0) == EQUAL && fpn_compare(v->y, 1) == EQUAL && fpn_compare(v->z, 0) == EQUAL)
+	|| (fpn_compare(v->x, 0) == EQUAL && fpn_compare(v->y, -1) == EQUAL && fpn_compare(v->z, 0) == EQUAL))
+		up = vec_normalize(vec(0.01, 1, 0));
+	else
+		up = vec(0, 1, 0);
+	aux = vec_cross(up, *v);
 	mat[0][0] = aux.x;
 	mat[0][1] = aux.y;
 	mat[0][2] = aux.z;
