@@ -6,7 +6,7 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 21:44:16 by pepaloma          #+#    #+#             */
-/*   Updated: 2025/02/05 17:22:00 by pepaloma         ###   ########.fr       */
+/*   Updated: 2025/02/06 19:55:18 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,16 +34,16 @@ void	rotation(double mat[4][4], t_vec *v)
 	else
 	{
 		up = vec(0, 1, 0);
-	aux = vec_cross(up, *v);
-	mat[0][0] = aux.x;
-	mat[0][1] = aux.y;
-	mat[0][2] = aux.z;
-	mat[0][3] = 0;
-	aux = vec_cross(*v, aux);
-	mat[1][0] = aux.x;
-	mat[1][1] = aux.y;
-	mat[1][2] = aux.z;
-	mat[1][3] = 0;
+		aux = vec_cross(up, *v);
+		mat[0][0] = aux.x;
+		mat[0][1] = aux.y;
+		mat[0][2] = aux.z;
+		mat[0][3] = 0;
+		aux = vec_cross(*v, aux);
+		mat[1][0] = aux.x;
+		mat[1][1] = aux.y;
+		mat[1][2] = aux.z;
+		mat[1][3] = 0;
 	}
 	mat[2][0] = v->x;
 	mat[2][1] = v->y;
