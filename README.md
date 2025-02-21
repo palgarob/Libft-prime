@@ -1,15 +1,12 @@
-# Libft-prime
-
-This is an improved version of libft with all the changes that I add throughout the 42 cursus.
-The version with only the required functions by the original subject can be found [here](https://github.com/palgarob/Libft).
-Apart from some custom functions, it also contains the code for the functions get_next_line
-and ft_printf from the projects of the 42 cursus with the same name.
-
-Pedro's notes:
-- Arreglar ft_printf y hacer printfd
 🔔 **Before you start** 🔔  
-> *This project is part of the [42 computer programming schools](https://www.42network.org/) common-core curriculum. 42 is a non-profit educational organization characterized by its peer-to-peer and project-based learning method. You'll find a [subject](en.subject.pdf) of the project in the repository.*
-
+<div style="display: flex; align-items: center;">
+    <div style="flex: 1;">
+        > *This project is part of the [42 computer programming schools](https://www.42network.org/) common-core curriculum. 42 is a non-profit educational organization characterized by its peer-to-peer and project-based learning method. You'll find a [subject](en.subject.pdf) of the project in the repository.*
+    </div>
+    <div style="margin-left: 20px;">
+        ![42 logo](https://github.com/palgarob/Libft-prime/blob/main/img/ft_logo.png)
+    </div>
+</div>
 ---
 
 # 🗃️ Libft-prime
