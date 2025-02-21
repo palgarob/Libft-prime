@@ -14,7 +14,7 @@ Pedro's notes:
 
 # 🗃️ Libft-prime
 
-![Cute balls](https://github.com/palgarob/Libft-prime/blob/main/img/ft_logo.png)
+![42 logo](https://github.com/palgarob/Libft-prime/blob/main/img/ft_logo.png)
 ### Table of Contents
 
 - [🛫 Intro ](#-intro)
