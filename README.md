@@ -1,10 +1,11 @@
 🔔 **Before you start** 🔔  
 > *This project is part of the [42 computer programming schools](https://www.42network.org/) common-core curriculum. 42 is a non-profit educational organization characterized by its peer-to-peer and project-based learning method. You'll find a [subject](en.subject.pdf) of the project in the repository.*
-<img style="float: right;" src="https://github.com/palgarob/Libft-prime/blob/main/img/ft_logo.png"><img/>
+
 ---
 
 # 🗃️ Libft-prime
 
+![42 logo](https://github.com/palgarob/Libft-prime/blob/main/img/ft_logo.png)
 ### Table of Contents
 
 - [🛫 Intro ](#-intro)
