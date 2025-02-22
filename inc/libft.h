@@ -6,7 +6,7 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 20:22:25 by pepaloma          #+#    #+#             */
-/*   Updated: 2025/02/05 16:40:28 by pepaloma         ###   ########.fr       */
+/*   Updated: 2025/02/21 21:07:52 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@
 # define EPSILON 0.00001
 
 /* ERROR MESSAGES                                                             */
-# define INVALID_MATRIX_SIZE "Error \nDon't compare matrixes other than \
+# define INVALID_MATRIX_SIZE "Error \nDon't compare matrices other than \
 2x2, 3x3, 4x4\n"
 
 /* LINKED LISTS                                                               */
@@ -44,23 +44,17 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
-bool		is_number(char *str);
-bool		is_double(const char *str);
-
-/* COLOR                                                                      */
-typedef struct s_color
-{
-	double	r;
-	double	g;
-	double	b;
-}	t_color;
-
-t_color	color(double r, double g, double b);
-t_color	color_blend(t_color a, t_color b);
-t_color	color_mul(t_color c, double fpnd);
-t_color	color_add(t_color a, t_color b);
-t_color	color_sub(t_color a, t_color b);
-
+t_list		*ft_lstnew(void *content);
+void		ft_lstadd_front(t_list **lst, t_list *new);
+int			ft_lstsize(t_list *lst);
+t_list		*ft_lstlast(t_list *lst);
+void		ft_lstadd_back(t_list **lst, t_list *new);
+void		ft_lstdelone(t_list *lst, void (*del)(void *));
+void		ft_lstclear(t_list **lst, void (*del)(void *));
+void		ft_lstiter(t_list *lst, void (*f)(void *));
+t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+t_list		*ft_lst2ndlast(t_list *lst);
+t_list		*ft_lstcpy(t_list *lst, void (*del)(void *));
 
 /* TUPLES                                                                     */
 struct s_tpl
@@ -87,9 +81,10 @@ int	ft_isalpha(int c);
 int	ft_isascii(int c);
 int	ft_isdigit(int c);
 int	ft_isprint(int c);
-bool	is_rgb(t_color *dst, char *src);
 bool	is_coord(struct s_tpl *dst, char *src);
-int	is_normalized_vec(char *vec);
+int		is_normalized_vec(char *vec);
+bool		is_number(char *str);
+bool		is_double(const char *str);
 
 /* MEMORY                                                                     */
 void		*ft_calloc(size_t count, size_t size);
@@ -116,7 +111,7 @@ size_t		ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t		ft_strlen(const char *s);
 
-/*ALFA2NUMERIC                                                                */
+/* ALFA2NUMERIC                                                               */
 int			a2double(double *dst, char *src);
 int			ft_atoi(const char *str);
 int			a2i(char *str, int *n);
@@ -124,22 +119,8 @@ int			a2uc(char *str, unsigned char *n);
 char		*ft_itoa(int n);
 void		ft_putnbr_fd(int n, int fd);
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-char		*get_next_line(int fd);
 int			ft_strcmp(const char *s1, const char *s2);
 double		to_double(const char *str);
-
-/* LINKED_LISTS                                                               */
-t_list		*ft_lstnew(void *content);
-void		ft_lstadd_front(t_list **lst, t_list *new);
-int			ft_lstsize(t_list *lst);
-t_list		*ft_lstlast(t_list *lst);
-void		ft_lstadd_back(t_list **lst, t_list *new);
-void		ft_lstdelone(t_list *lst, void (*del)(void *));
-void		ft_lstclear(t_list **lst, void (*del)(void *));
-void		ft_lstiter(t_list *lst, void (*f)(void *));
-t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-t_list		*ft_lst2ndlast(t_list *lst);
-t_list		*ft_lstcpy(t_list *lst, void (*del)(void *));
 
 /* PRINTFD                                                                   */
 int			printfd(int fd, char const *format, ...);
@@ -209,7 +190,7 @@ typedef enum e_comp_result
 	A_GREAT_B
 }	t_comp;
 
-t_comp			fpn_compare(double a, double b);
 double			deg2rad(double deg);
+char		*get_next_line(int fd);
 
 #endif

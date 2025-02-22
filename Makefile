@@ -6,32 +6,25 @@
 #    By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/22 17:14:39 by pepaloma          #+#    #+#              #
-#    Updated: 2025/01/30 10:15:17 by pepaloma         ###   ########.fr        #
+#    Updated: 2025/02/22 11:48:17 by pepaloma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# The Target Binary Program
-NAME	= libft.a
+# Target Binary Program
+NAME	:= libft.a
 
 # Directories
-SRC_DIR		= src
-INC_DIR		= inc
-OBJ_DIR	= obj
+SRC_DIR	:= src
+INC_DIR	:= inc
+OBJ_DIR	:= obj
 
-# Compiler, flags includes
+# Compilation flas
 CC				= cc
 CFLAGS			= -Wall -Wextra -Werror
 HEADERS			= -I$(INC_DIR)
 
-#-------------------------------------------------------------------------------
-#DO NOT EDIT BELOW THIS LINE
-#-------------------------------------------------------------------------------
-
 SRC_FILES := $(shell find $(SRC_DIR) -type f -name '*.c')
 OBJ_FILES := $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRC_FILES))
-
-.PHONY: all re clean fclean
-#.SILENT :
 
 all : $(NAME)
 
@@ -42,10 +35,12 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	mkdir -p $(dir $@)
 	$(CC) $(HEADERS) $(CFLAGS) -c $< -o $@
 
-re : fclean all
+clean :
+	rm -rf $(OBJ_DIR)
 
 fclean : clean
-	rm -f $(NAME)
+	rm -rf $(NAME)
 
-clean :
-	rm -f $(OBJ_FILES)
+re : fclean all
+
+.PHONY: all re clean fclean

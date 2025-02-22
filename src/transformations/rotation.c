@@ -6,10 +6,11 @@
 /*   By: pepaloma <pepaloma@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 21:44:16 by pepaloma          #+#    #+#             */
-/*   Updated: 2025/02/06 19:55:18 by pepaloma         ###   ########.fr       */
+/*   Updated: 2025/02/21 21:24:01 by pepaloma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <math.h>
 #include "libft.h"
 
 void	rotation(double mat[4][4], t_vec *v)
@@ -17,11 +18,11 @@ void	rotation(double mat[4][4], t_vec *v)
 	t_vec	aux;
 	t_vec	up;
 
-	if ((fpn_compare(v->x, 0) == EQUAL && fpn_compare(v->y, 1) == EQUAL && fpn_compare(v->z, 0) == EQUAL)
-	|| (fpn_compare(v->x, 0) == EQUAL && fpn_compare(v->y, -1) == EQUAL && fpn_compare(v->z, 0) == EQUAL))
+	if ((fabs(v->x - 0) < EPSILON && fabs(v->y - 1) < EPSILON && fabs(v->z - 0) < EPSILON)
+	|| (fabs(v->x - 0) < EPSILON && fabs(v->y + 1) < EPSILON && fabs(v->z - 0) < EPSILON))
 	{
 		up = vec(0, 0, -1);
-		aux = vec_cross(up, *v);
+		aux = vec_normalize(vec_cross(up, *v));
 		mat[0][0] = aux.x;
 		mat[0][1] = aux.y;
 		mat[0][2] = aux.z;
@@ -34,12 +35,12 @@ void	rotation(double mat[4][4], t_vec *v)
 	else
 	{
 		up = vec(0, 1, 0);
-		aux = vec_cross(up, *v);
+		aux = vec_normalize(vec_cross(up, *v));
 		mat[0][0] = aux.x;
 		mat[0][1] = aux.y;
 		mat[0][2] = aux.z;
 		mat[0][3] = 0;
-		aux = vec_cross(*v, aux);
+		aux = vec_normalize(vec_cross(*v, aux));
 		mat[1][0] = aux.x;
 		mat[1][1] = aux.y;
 		mat[1][2] = aux.z;

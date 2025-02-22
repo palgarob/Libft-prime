@@ -4,6 +4,7 @@
 
 # 🗃️ Libft-prime
 
+![alt text](img/holy_graph.png)
 
 ### Table of Contents
 
@@ -20,21 +21,11 @@
 
 ## 🛫 Intro
 
-[Ray tracing](https://en.wikipedia.org/wiki/Ray_tracing_(graphics)) is a technique to compute a description
-of a scene to render a 3D-looking image. Using several principles of linear algebra and trigonometry,
-this method recreates the lighting of that scene, making it look like a realistic(ish) object.
+This project is the beginning for every person that starts their adventure at 42. The goal is to familirize one self with various concepts related to programming, as well as mimicing the behaviour of some of the functions from the [libc](https://en.wikipedia.org/wiki/C_standard_library).
 
-![Simple Sphere](https://github.com/palgarob/miniRT/blob/main/img/simple_sphere.png)
-
-It gets its name from the concept of a ray, a tuple of a point in space and a vector, which represents the
-origin of a light ray and its orientation. Creating the algorithms that compute the way that a light ray bounces
-on objects and reaches the camera is the core of the idea, but depending on the preferences of the user
-different parameters may be used to recreate even more characteristics for the perception of the image.
+Although many people that heard about this project think there is no need to reinvent the wheel, I have found that this project helped me understand the C programming language and its use in Linux in a way that 42-outsiders don't.
 
 ## ✨ Characteristics
-
-- As for us, we have chosen to use the [Phong reflection model](https://en.wikipedia.org/wiki/Phong_reflection_model),
-which lets the user change values like `diffuse`, `ambient`, `brightness`, `shininess` and `specular`.
 
 - The code follows the [42 Norm](https://github.com/42School/norminette/blob/master/pdf/en.norm.pdf) standard
 in accordance with the 42 evaluation criteria.
@@ -42,73 +33,58 @@ in accordance with the 42 evaluation criteria.
 - This program has been tested on Linux and macOS.
 
 ## 🛠️ Tools used
-![Tools used](https://github.com/palgarob/miniRT/blob/main/img/tools.png)
-The [MiniLibX](https://github.com/42-Fundacion-Telefonica/MLX42.git) is a tiny graphics library that allows you to do the most basic things for rendering something on screens without any knowledge of X-Window and Cocoa.
 
-The headers used for the rest of the functions are:
+The headers used for the permitted functions:
 
-| Header File  | Functions                  |
-|--------------|----------------------------|
-| `math.h`     | `sqrt`, `pow`, `tan`       |
-| `stdlib.h`   | `free`, `malloc`, `exit`   |
-| `unistd.h`   | `close`, `read`, `write`   |
-| `stdio.h`    | `printf`, `perror`         |
-| `fcntl.h`    | `open`                     |
-| `string.h`   | `strerror`                 |
+| Header File  | Libft            | get_next_line/ft_printf                   |
+|--------------|------------------|-------------------------------------------|
+| `stdlib.h`   | `free`, `malloc` |                                           |
+| `unistd.h`   | `write`          | `read`                                    |
+| `stdarg.h`   |                  | `va_start`, `va_arg`, `va_copy`, `va_end` |
 
 ## 🚀 Quick guide
 
-The first thing you must do is clone the repository, but remember to run it with the `--recursive-submodules` flag to download the MiniLibX content. Or run `git submodule update --init` after cloning.
-
-When running make, any errors that might arise could probably be due to the lack of the libraries needed for the MiniLibX. I have never used CMake before and don't fully understand this tool yet, so I can't provide solutions regarding this builder.
-
-Once you manage to get the executable, you can choose one scene from the `scenes` folder and run its path as the only parameter. Excluding memory errors, the program should open a window with the image.
+The first thing you must do is clone the repository. Upon running make, a static library should be created in `bin`.
 
 ## 🎨 Bonus
 
-- The light has the additional parameter `color`.
+This repository is a bonus in itself. It is the extended version of the libft project, meaning it has several functions not originally from the project, but that I have been using throughout the cursus. Among the new utilities you can find:
+
+- More complex and refined functions for alphabetical to numerical data type transformations.
+- Some bool-returning functions that check strings for specific expressions.
+- Size 4 matrix operands.
+- Operands for tuples, points and vectors.
+- A new `ft_printf` called `printfd` that takes the fd for the output as first argument.
+- New functions to manage string arrays (`split`).
+- Transformations using matrices. These are applied to the `s_tpl` struct.
+- Linked lists as the proposed bonus.
 
 ## 📖 Training report
 
-This project has been a real journey—I even had to restart it and rethink my approach halfway through. On the other hand, I ended up enjoying proving myself that I was capable of such a complex (for me at this moment) project.
-
-The orientation of the elements (camera as well as the objects), has been one of the biggest challenges. Depending on the way you implement the program, the orientation is computed in some way or another and it may affect the final result if the rest of the code is not coherent with this part. In fact, the problem with the cylinders' rotation was the reason the project had to be remade.
+This project acompanies you throught the first steps in the cursus, so having to update it constantly was the main challenge. I often found my self making changes that I would later on undo or realizing an idea would not fit in this library. All in all, I think I had the experience this project is meant to give: be clean when writing code!
 
 ## 🏆 Acquired skills
 
-- Apart from the obvious **C**, I improved even more my skills in **make** and **git**.
-- I expanded my knowledge of the use of a graphics library.
-- I learned fairly complex mathematical operations, which really opened my mind.
-- I improved my researching abilities during the crisis since we had to reach out for help to improve our documentation and get to understand the problems that kept bugging us.
+- A deeper understanding of C
+- Memory management
+- Pointers and arrays
+- C strings, double pointers.
+- Linked lists
 
 ## 🔧 Future improvement and/or next steps
 
-### ✅ To-do list
+I'm not sure what the next steps would be. To maintain a static library that you actually use is very straight-forward yet complex, apart from the fact that this library only makes sense for the 42 projects where you are not allowed to use certain functions. Otherwise, it doesn't make much sense to use it (except for the parts that are improved or implementations that aren't in the [libc](https://en.wikipedia.org/wiki/C_standard_library)).
 
-- [x] Arreglar que puedan faltar luz, cámara y ambient
-- [x] Comparar bien los fpn con epsilon
-- [x] Argumento de los vectores de dirección revisar requisitos
-- [x] Arreglar las sombras dentro de los objetos
-- [x] Revisar el parseo, criterios de los parámetros.
-- [x] Parece que la cámara al final no se orienta bien
-- [ ] For the time being, only `ambient` can be set from the executable arguments.
-- [ ] There could be a submodule for the libft. I can do this as soon as I finish [Libft-prime](https://github.com/palgarob/Libft-prime).
-- [ ] The part where the objects are created and the parsing is done are intertwined. It would be good praxis if it was divided.
+Probably one thing to do would be to make this library compatible with all my 42 projects, so that I can use it as a submodule in those.
 
-## 🤝 Acknowledgements
+### To-do list
 
-This is a shared project! Working with my partner [MarkelUribe](https://github.com/MarkelUribe) has been a truly enriching experience.
+- [ ] Do a final version compatible with the rest of the projects. The goal is to make a submodule.
+- [ ] I forgot this one, it'll come.
 
 ## 📚 References
 
-| Type          | Title                                                                 | Link                                                                 |
-|---------------|-----------------------------------------------------------------------|----------------------------------------------------------------------|
-| YouTube Video | Linear algebra                                                       | [Watch here](https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) |
-| YouTube Video | Tutorial                                                             | [Watch here](https://www.youtube.com/watch?v=RIgc5J_ZGu8&list=PLAqGIYgEAxrUO6ODA0pnLkM2UOijerFPv) |
-| YouTube Video | Vectors                                                              | [Watch here](https://youtu.be/Ej3ZVxljJfo?si=9LpRtvTOOULlAH8K)       |
-| Book          | Ray Tracing in One Weekend                                           | [Read here](https://raytracing.github.io/books/RayTracingInOneWeekend.html) |
-| Book          | The Ray Tracing Challenge                                            | [Read here](http://raytracerchallenge.com/) |
-| Web Page      | scratchpixel                                                         | [Visit here](https://raytracing.github.io/books/RayTracingInOneWeekend.html) |
+My references where the original documentation! `man` should do.
 
 ### 🎉 Thanks!
 Don't hesitate to contact me. You have the info in [my profile](https://github.com/palgarob)
