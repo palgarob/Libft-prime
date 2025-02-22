@@ -1,6 +1,11 @@
+<!-- filepath: /Users/pedropalomares/42/Libft-prime/README.md -->
+<div align="left">
+
 | 🔔 **Before you start** 🔔 |  |
 |----------------------------|--|
-| *This project is part of the [42 computer programming schools](https://www.42network.org/) common-core curriculum. 42 is a non-profit educational organization characterized by its peer-to-peer and project-based learning method. You'll find a [subject](en.subject.pdf) of the project in the repository.* | <img src="https://github.com/palgarob/Libft-prime/blob/main/img/ft_logo.png" alt="42 logo" align="right"> |
+| <div align="justify">*This project is part of the [42 computer programming schools](https://www.42network.org/) common-core curriculum. 42 is a non-profit educational organization characterized by its peer-to-peer and project-based learning method. You'll find a [subject](en.subject.pdf) of the project in the repository.*</div> | <img src="https://github.com/palgarob/Libft-prime/blob/main/img/ft_logo.png" alt="42 logo" align="right"> |
+
+</div>
 
 ---
 
