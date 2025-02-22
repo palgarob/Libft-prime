@@ -1,7 +1,7 @@
 <!-- filepath: /Users/pedropalomares/42/Libft-prime/README.md -->
 <div align="left">
 
-<table style="border: none; width: 100%;">
+<table style="border-collapse: collapse; width: 100%;">
   <tr style="border: none;">
     <th align="left" style="border: none;">🔔 **Before you start** 🔔</th>
     <th style="border: none;"></th>
