@@ -1,11 +1,14 @@
 🔔 **Before you start** 🔔  
 > *This project is part of the [42 computer programming schools](https://www.42network.org/) common-core curriculum. 42 is a non-profit educational organization characterized by its peer-to-peer and project-based learning method. You'll find a [subject](en.subject.pdf) of the project in the repository.*
 
+<p align="right">
+	<img src="https://github.com/palgarob/Libft-prime/blob/main/img/ft_logo.png" alt="42 logo">
+</p>
+
 ---
 
 # 🗃️ Libft-prime
 
-![42 logo](https://github.com/palgarob/Libft-prime/blob/main/img/ft_logo.png)
 ### Table of Contents
 
 - [🛫 Intro ](#-intro)
@@ -25,7 +28,9 @@
 of a scene to render a 3D-looking image. Using several principles of linear algebra and trigonometry,
 this method recreates the lighting of that scene, making it look like a realistic(ish) object.
 
-![Simple Sphere](https://github.com/palgarob/miniRT/blob/main/img/simple_sphere.png)
+<p align="right">
+	<img src="https://github.com/palgarob/miniRT/blob/main/img/simple_sphere.png" alt="Simple Sphere">
+</p>
 
 It gets its name from the concept of a ray, a tuple of a point in space and a vector, which represents the
 origin of a light ray and its orientation. Creating the algorithms that compute the way that a light ray bounces
@@ -43,7 +48,9 @@ in accordance with the 42 evaluation criteria.
 - This program has been tested on Linux and macOS.
 
 ## 🛠️ Tools used
-![Tools used](https://github.com/palgarob/miniRT/blob/main/img/tools.png)
+<p align="right">
+	<img src="https://github.com/palgarob/miniRT/blob/main/img/tools.png" alt="Tools used">
+</p>
 The [MiniLibX](https://github.com/42-Fundacion-Telefonica/MLX42.git) is a tiny graphics library that allows you to do the most basic things for rendering something on screens without any knowledge of X-Window and Cocoa.
 
 The headers used for the rest of the functions are:
